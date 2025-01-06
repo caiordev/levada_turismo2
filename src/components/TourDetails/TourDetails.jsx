@@ -59,6 +59,12 @@ const GalleryGrid = styled.div`
   
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    gap: 1rem;
+    background: transparent;
+  }
 `;
 
 const GalleryImage = styled.div`
@@ -99,8 +105,12 @@ const GalleryImage = styled.div`
     height: 40vh;
     
     &:not(:first-child) {
-      flex: 0 0 300px;
+      flex: 0 0 280px;
       height: 40vh;
+    }
+
+    &:first-child {
+      flex: 0 0 100%;
     }
   }
 `;
@@ -272,17 +282,36 @@ const Modal = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 1rem;
 
   img {
     max-width: 90%;
     max-height: 90vh;
     object-fit: contain;
+    border-radius: 8px;
   }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    background: rgba(0,0,0,0.95);
+    
+    img {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0;
 `;
 
 const Button = styled.button`
@@ -297,11 +326,15 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
   transition: background-color 0.3s ease;
 
   &:hover {
     background-color: #128c7e;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
   }
 `;
 
@@ -446,13 +479,16 @@ const TourDetails = () => {
 
       {selectedImage && (
         <Modal onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage} alt="Tour" />
+          <img src={selectedImage} alt="Tour" onClick={(e) => e.stopPropagation()} />
         </Modal>
       )}
 
-      <Button>
-        <i className="fab fa-whatsapp"></i> Reservar este passeio
-      </Button>
+      <ButtonContainer>
+        <Button>
+          <i className="fab fa-whatsapp"></i>
+          Reservar este passeio
+        </Button>
+      </ButtonContainer>
     </DetailsContainer>
   );
 };

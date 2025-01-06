@@ -57,7 +57,8 @@ const Name = styled.h2`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -69,7 +70,9 @@ const Description = styled.p`
   line-height: 1.6;
   
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
   }
 `;
 
@@ -85,6 +88,11 @@ const Button = styled.button`
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
 
   &:hover {
     background: #1976d2;
@@ -135,6 +143,10 @@ const ArrowButton = styled.button`
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.3);
