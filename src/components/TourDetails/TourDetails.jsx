@@ -6,6 +6,12 @@ const DetailsContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #ffffff;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Header = styled.div`
