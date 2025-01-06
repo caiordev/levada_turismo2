@@ -1,9 +1,16 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const PlacesSection = styled.section`
   padding: 80px 0;
-  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  background: #ffffff;
+  min-height: 100vh;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -11,6 +18,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  background: #ffffff;
 `;
 
 const SectionTitle = styled.h2`
@@ -50,6 +58,11 @@ const PlacesContainer = styled.div`
   position: relative;
   width: 100%;
   padding: 0 40px;
+  background: #ffffff;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 const PlacesGrid = styled.div`
@@ -60,6 +73,7 @@ const PlacesGrid = styled.div`
   padding: 20px 0;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  background: #ffffff;
   
   &::-webkit-scrollbar {
     display: none;
@@ -201,50 +215,79 @@ const ScrollButton = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Places = () => {
-  const scrollContainerRef = useRef(null);
+  const placesGridRef = useRef(null);
+  const navigate = useNavigate();
 
-  const scroll = (direction) => {
-    const container = scrollContainerRef.current;
-    const scrollAmount = direction === 'left' ? -350 : 350;
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  const handleScroll = (direction) => {
+    const container = placesGridRef.current;
+    const scrollAmount = 400;
+    if (container) {
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleSaibaMais = (placeId) => {
+    navigate(`/place/${placeId}`);
   };
 
   const places = [
     {
-      id: 1,
+      id: 'lencois-maranhenses',
       name: 'Lençóis Maranhenses',
-      description: 'Dunas de areia branca e lagoas de água cristalina formam uma paisagem única no mundo.',
+      description: 'Explore as majestosas dunas brancas e lagoas cristalinas dos Lençóis Maranhenses.',
       image: '/lencois-maranhenses.jpg'
     },
     {
-      id: 2,
+      id: 'farol-mandacaru',
       name: 'Farol de Mandacaru',
       description: 'Vista panorâmica deslumbrante do encontro do Rio Preguiças com o mar.',
       image: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp'
     },
     {
-      id: 3,
+      id: 'rio-preguicas',
       name: 'Rio Preguiças',
       description: 'Navegue por um dos mais belos rios do Maranhão, cercado por natureza exuberante.',
       image: '/BarreirinhasPortal.jpg'
+    },
+    {
+      id: 'pequenos-lencois',
+      name: 'Pequenos Lençóis',
+      description: 'Uma versão mais íntima dos Lençóis, com dunas e lagoas igualmente deslumbrantes.',
+      image: '/pequenos-lencois.jpg'
+    },
+    {
+      id: 'atins',
+      name: 'Atins',
+      description: 'Vila de pescadores com praias desertas e ponto de partida para aventuras nas dunas.',
+      image: '/atins.jpg'
     }
   ];
 
   return (
     <PlacesSection id="places">
       <Container>
-        <SectionTitle>Lugares Disponíveis</SectionTitle>
+        <SectionTitle>Conheça Nossos Destinos</SectionTitle>
         <SectionSubtitle>
-          Descubra os destinos mais incríveis do Maranhão, onde cada lugar conta uma história única e oferece experiências inesquecíveis.
+          Descubra as maravilhas naturais do Maranhão, cada lugar com sua própria história e beleza única.
         </SectionSubtitle>
         <PlacesContainer>
-          <ScrollButton direction="left" onClick={() => scroll('left')}>
-            ‹
+          <ScrollButton
+            direction="left"
+            onClick={() => handleScroll('left')}
+          >
+            &#8249;
           </ScrollButton>
-          <PlacesGrid ref={scrollContainerRef}>
+          <PlacesGrid ref={placesGridRef}>
             {places.map(place => (
               <PlaceCard key={place.id}>
                 <ImageContainer>
@@ -252,17 +295,21 @@ const Places = () => {
                 </ImageContainer>
                 <PlaceContent>
                   <PlaceName>{place.name}</PlaceName>
-                  <PlaceDescription>{place.description}</PlaceDescription>
-                  <PlaceButton>
-                    Saiba mais
-                    <span>→</span>
+                  <PlaceDescription>
+                    {place.description}
+                  </PlaceDescription>
+                  <PlaceButton onClick={() => handleSaibaMais(place.id)}>
+                    Saiba Mais
                   </PlaceButton>
                 </PlaceContent>
               </PlaceCard>
             ))}
           </PlacesGrid>
-          <ScrollButton direction="right" onClick={() => scroll('right')}>
-            ›
+          <ScrollButton
+            direction="right"
+            onClick={() => handleScroll('right')}
+          >
+            &#8250;
           </ScrollButton>
         </PlacesContainer>
       </Container>

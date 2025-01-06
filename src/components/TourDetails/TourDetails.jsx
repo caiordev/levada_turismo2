@@ -22,33 +22,6 @@ const Header = styled.div`
   overflow: hidden;
 `;
 
-const HeaderContent = styled.div`
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  color: white;
-  z-index: 1;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .rating {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-  }
-`;
-
 const GalleryGrid = styled.div`
   display: flex;
   overflow-x: auto;
@@ -83,24 +56,9 @@ const GalleryImage = styled.div`
   cursor: pointer;
   transition: transform 0.3s ease;
   scroll-snap-align: start;
-  position: relative;
-
-  &:first-child {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-      border-radius: 15px;
-    }
-  }
 
   &:not(:first-child) {
-    flex: 0 0 400px;
-    height: 60vh;
+    flex: 0 0 100%;
   }
 
   &:hover {
@@ -109,13 +67,9 @@ const GalleryImage = styled.div`
 
   @media (max-width: 768px) {
     height: 40vh;
+    flex: 0 0 100%;
     
     &:not(:first-child) {
-      flex: 0 0 280px;
-      height: 40vh;
-    }
-
-    &:first-child {
       flex: 0 0 100%;
     }
   }
@@ -344,6 +298,49 @@ const Button = styled.button`
   }
 `;
 
+const ScrollIndicator = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  animation: bounce 1.5s infinite;
+  pointer-events: none;
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(-50%) translateX(0);
+    }
+    50% {
+      transform: translateY(-50%) translateX(5px);
+    }
+  }
+
+  &::after {
+    content: '→';
+    font-size: 20px;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+    right: 15px;
+    
+    &::after {
+      font-size: 16px;
+    }
+  }
+`;
+
 const tourData = {
   'lagoa-azul': {
     name: 'Lagoa Azul',
@@ -404,21 +401,23 @@ const tourData = {
 
 const TourDetails = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showIndicator, setShowIndicator] = useState(true);
   const { id } = useParams();
   const tour = tourData[id];
+
+  // Hide indicator after first scroll
+  const handleScroll = (e) => {
+    if (e.target.scrollLeft > 0) {
+      setShowIndicator(false);
+    }
+  };
 
   if (!tour) return <div>Tour não encontrado</div>;
 
   return (
     <DetailsContainer>
       <Header>
-        <HeaderContent>
-          <h1>{tour.name}</h1>
-          <div className="rating">
-            {'★'.repeat(5)} <span>{tour.rating.toFixed(1)}</span>
-          </div>
-        </HeaderContent>
-        <GalleryGrid>
+        <GalleryGrid onScroll={handleScroll}>
           <GalleryImage
             image={tour.mainImage}
             onClick={() => setSelectedImage(tour.mainImage)}
@@ -431,6 +430,7 @@ const TourDetails = () => {
             />
           ))}
         </GalleryGrid>
+        {showIndicator && tour.gallery.length > 0 && <ScrollIndicator />}
       </Header>
 
       <InfoSection>

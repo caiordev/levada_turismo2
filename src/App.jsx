@@ -14,6 +14,7 @@ import WhatsAppFloat from './components/WhatsApp/WhatsAppFloat'
 import TourDetails from './components/TourDetails/TourDetails'
 import Places from './components/Places/Places'
 import Reviews from './components/Reviews/Reviews'
+import PlaceDetails from './components/PlaceDetails/PlaceDetails'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -43,26 +44,28 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <Home />
-            <About />
-            <OurTours />
-            <Places />
-            <Transfer />
-            <Destinations />
-  
-            <Contact />
-            <Reviews />
-            <FAQ />
-            <Footer />
-            <WhatsAppFloat />
-          </>
-        } />
-        <Route path="/tour/:id" element={<TourDetails />} />
-      </Routes>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/tour/:id" element={<TourDetails />} />
+          <Route path="/place/:id" element={<PlaceDetails />} />
+          <Route path="/" element={
+            <>
+              <Home />
+              <About />
+              <OurTours />
+              <Places />
+              <Transfer />
+              <Destinations />
+              <Contact />
+              <Reviews />
+              <FAQ />
+              <WhatsAppFloat />
+            </>
+          } />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   )
 }
