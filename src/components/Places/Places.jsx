@@ -237,6 +237,7 @@ const Places = () => {
   };
 
   const handleSaibaMais = (placeId) => {
+    window.scrollTo(0, 0); // Adiciona o scroll para o topo
     navigate(`/place/${placeId}`);
   };
 

@@ -23,6 +23,19 @@ const tours = [
     description: 'Navegue pelo Rio Preguiças com paradas em pontos turísticos.',
     image: '/BarreirinhasPortal.jpg',
     rating: 5.0
+  },
+  {
+    id: 'passeio-caiaque',
+    name: 'Aventura de Caiaque',
+    description: 'Uma experiência única de caiaque pelas águas cristalinas do Rio Preguiças, explorando a natureza de perto.',
+    image: '/caiaque6.jpeg',
+    rating: 5.0,
+    highlights: [
+      'Instrutor experiente',
+      'Equipamentos de segurança inclusos',
+      'Duração: 3 horas',
+      'Nível: iniciante a intermediário'
+    ]
   }
 ];
 
@@ -30,7 +43,15 @@ const OurTours = () => {
   const navigate = useNavigate();
 
   const handleVerMais = (tourId) => {
+    window.scrollTo(0, 0);
     navigate(`/tour/${tourId}`);
+  };
+
+  const handleReservar = (tourName) => {
+    const phoneNumber = "5598981876833"; // Substitua pelo número correto
+    const message = `Olá! Gostaria de mais informações sobre o passeio: ${tourName}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -46,6 +67,13 @@ const OurTours = () => {
                   {'★'.repeat(5)} <span>{tour.rating.toFixed(1)}</span>
                 </div>
                 <p>{tour.description}</p>
+                {tour.highlights && (
+                  <ul className="highlights">
+                    {tour.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
                 <div className="tour-buttons">
                   <button 
                     className="btn-ver-mais"
@@ -53,7 +81,10 @@ const OurTours = () => {
                   >
                     Ver Mais
                   </button>
-                  <button className="btn-reservar">
+                  <button 
+                    className="btn-reservar"
+                    onClick={() => handleReservar(tour.name)}
+                  >
                     <i className="fab fa-whatsapp"></i> Reservar
                   </button>
                 </div>

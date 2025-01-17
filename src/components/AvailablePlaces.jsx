@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AvailablePlaces.css';
 
 const places = [
@@ -37,6 +38,13 @@ const places = [
 ];
 
 const AvailablePlaces = () => {
+  const navigate = useNavigate();
+
+  const handleSaibaMais = (placeId) => {
+    window.scrollTo(0, 0);
+    navigate(`/place/${placeId}`);
+  };
+
   return (
     <section className="available-places">
       <h2>Lugares Disponíveis</h2>
@@ -57,7 +65,7 @@ const AvailablePlaces = () => {
                 <span>Mín: {place.minPeople}</span>
               </div>
             </div>
-            <button className="saiba-mais">Saiba Mais</button>
+            <button className="saiba-mais" onClick={() => handleSaibaMais(place.id)}>Saiba Mais</button>
           </div>
         ))}
       </div>

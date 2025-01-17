@@ -15,6 +15,7 @@ import TourDetails from './components/TourDetails/TourDetails'
 import Places from './components/Places/Places'
 import Reviews from './components/Reviews/Reviews'
 import PlaceDetails from './components/PlaceDetails/PlaceDetails'
+import KayakTour from './components/KayakTour/KayakTour'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -54,17 +55,17 @@ function App() {
               <Home />
               <About />
               <OurTours />
-              <Places />
+              <KayakTour />
               <Transfer />
-              <Destinations />
-              <Contact />
+              <Places />
               <Reviews />
               <FAQ />
-              <WhatsAppFloat />
+              <Contact />
             </>
           } />
         </Routes>
         <Footer />
+        <WhatsAppFloat />
       </div>
     </Router>
   )
