@@ -467,6 +467,25 @@ const tourData = {
       '/parque-nacional-dos-lencois.jpg'
     ]
   },
+  'passeio-caiaque': {
+    name: 'Aventura de Caiaque',
+    rating: 5.0,
+    mainImage: '/caiaque6.jpeg',
+    description: 'Passeio de caiaque pelo Rio Preguiças, com duração de aproximadamente 4 horas. Durante o passeio, exploraremos a natureza de perto, passando por manguezais e apreciando a fauna e flora locais.',
+    details: {
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+    },
+    gallery: [
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
+    ]
+  },
+  
 };
 
 const TourDetails = () => {
