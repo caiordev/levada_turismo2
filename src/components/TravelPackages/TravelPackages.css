@@ -1,0 +1,158 @@
+.travel-packages {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+.travel-packages h2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 2.3rem;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.package-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 500px;
+  margin: 0;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-image {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.package-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), transparent);
+  color: white;
+}
+
+.package-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.rating span {
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.package-content p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.highlights {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.highlights li {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.highlights li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: #ffd700;
+}
+
+.package-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-reservar {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #25d366;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-reservar:hover {
+  background-color: #128c7e;
+}
+
+@media (max-width: 768px) {
+  .travel-packages {
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .package-card {
+    height: 400px;
+    scroll-snap-align: start;
+  }
+  
+  .packages-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .packages-grid {
+    scrollbar-width: none;
+  }
+  
+  .package-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .package-content p {
+    font-size: 0.8rem;
+  }
+  
+  .highlights li {
+    font-size: 0.8rem;
+  }
+}

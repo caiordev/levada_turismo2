@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HomeSection = styled.div`
@@ -157,98 +158,74 @@ const ArrowButton = styled.button`
 
 const slides = [
   {
-    image: '/Lencois-1.jpg',
-    name: 'Lagoa Azul',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae neque perspiciatis enim similique impedit laudantium.'
+    image: '/lencois-maranhenses.jpg',
+    name: 'Lençóis Maranhenses',
+    description: 'Descubra o paraíso das dunas e lagoas cristalinas'
   },
   {
     image: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
     name: 'Mandacaru',
-    description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae neque perspiciatis enim similique impedit laudantium.'
+    description: 'Explore a história e a vista panorâmica da região'
+  },
+  {
+    image: '/atins.webp',
+    name: 'Atins',
+    description: 'Explore as praias desertas e a natureza selvagem'
+  },
+  {
+    image: '/pequenos-lencois.jpg',
+    name: 'Pequenos Lençóis',
+    description: 'Navegue pelas águas tranquilas e conheça a natureza local'
+  },
+  {
+    image: '/cardosa.webp',
+    name: 'Povoado Cardosa',
+    description: 'Navegue pelas águas tranquilas e conheça a natureza local'
   }
 ];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startPos, setStartPos] = useState(0);
-  const [currentTranslate, setCurrentTranslate] = useState(0);
-  const autoPlayRef = useRef();
-
-  const nextSlide = () => {
-    setCurrentSlide(current => (current + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(current => (current - 1 + slides.length) % slides.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    setStartPos(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const currentPos = e.touches[0].clientX;
-    const diff = currentPos - startPos;
-    setCurrentTranslate(diff);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    const threshold = window.innerWidth * 0.2;
-    if (Math.abs(currentTranslate) > threshold) {
-      if (currentTranslate > 0) {
-        prevSlide();
-      } else {
-        nextSlide();
-      }
-    }
-    setCurrentTranslate(0);
-  };
+  const slideInterval = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const play = () => {
-      autoPlayRef.current = setTimeout(nextSlide, 5000);
-    };
-
-    play();
-
+    startSlideShow();
     return () => {
-      if (autoPlayRef.current) {
-        clearTimeout(autoPlayRef.current);
+      if (slideInterval.current) {
+        clearInterval(slideInterval.current);
       }
     };
-  }, [currentSlide]);
+  }, []);
+
+  const startSlideShow = () => {
+    slideInterval.current = setInterval(() => {
+      setCurrentSlide(current => (current + 1) % slides.length);
+    }, 5000);
+  };
+
+  const handleExplore = () => {
+    navigate('/region');
+  };
 
   return (
     <HomeSection id="home">
-      <SlideContainer
-        translate={-currentSlide * 100 + (currentTranslate / window.innerWidth) * 100}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <SlideContainer translate={-currentSlide * 100}>
         {slides.map((slide, index) => (
           <SlideItem key={index} image={slide.image}>
             <Content>
               <Name>{slide.name}</Name>
               <Description>{slide.description}</Description>
-              <Button>Explorar Agora</Button>
+              <Button onClick={handleExplore}>Explorar Agora</Button>
             </Content>
           </SlideItem>
         ))}
       </SlideContainer>
 
-      <ArrowButton direction="left" onClick={prevSlide}>
+      <ArrowButton direction="left" onClick={() => setCurrentSlide(current => (current - 1 + slides.length) % slides.length)}>
         ‹
       </ArrowButton>
-      <ArrowButton direction="right" onClick={nextSlide}>
+      <ArrowButton direction="right" onClick={() => setCurrentSlide(current => (current + 1) % slides.length)}>
         ›
       </ArrowButton>
 
@@ -257,7 +234,7 @@ const Home = () => {
           <Dot
             key={index}
             active={currentSlide === index}
-            onClick={() => goToSlide(index)}
+            onClick={() => setCurrentSlide(index)}
           />
         ))}
       </NavigationDots>

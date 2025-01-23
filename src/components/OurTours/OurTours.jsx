@@ -56,7 +56,7 @@ const OurTours = () => {
 
   return (
     <section className="our-tours" id="tours">
-      <h2>Nossos Passeisos</h2>
+      <h2>Nossos Passeios</h2>
       <div className="tours-grid">
         {tours.map((tour) => (
           <div key={tour.id} className="tour-card">

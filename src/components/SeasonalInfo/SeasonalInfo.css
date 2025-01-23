@@ -1,0 +1,252 @@
+.seasonal-info {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+}
+
+.seasonal-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.seasonal-header h2 {
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.seasonal-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+}
+
+.seasonal-header p {
+  color: #666;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+}
+
+.seasons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.season-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.season-card:hover {
+  transform: translateY(-5px);
+}
+
+.season-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.season-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.season-title h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.period {
+  color: #ffd700;
+  font-size: 1rem;
+  display: block;
+}
+
+.season-content {
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+.description {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.water-level {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.water-level-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.percentage {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.water-level-bar {
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.water-level-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.status-container {
+  margin-bottom: 1.5rem;
+}
+
+.status-container h4,
+.recommendation h4 {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-list li {
+  color: #555;
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.status-list li::before {
+  content: "•";
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+  line-height: 0;
+}
+
+.recommendation {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.recommendation p {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlights li {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+}
+
+.highlights li::before {
+  content: "•";
+  color: #ffd700;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .seasonal-info {
+    padding: 1rem;
+  }
+
+  .seasonal-header h2 {
+    font-size: 2rem;
+  }
+
+  .seasonal-header p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .seasons-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .season-card {
+    scroll-snap-align: start;
+  }
+
+  .season-image {
+    height: 180px;
+  }
+
+  .season-title h3 {
+    font-size: 1.5rem;
+  }
+
+  .season-content {
+    padding: 1.25rem;
+  }
+
+  .seasons-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .seasons-container {
+    scrollbar-width: none;
+  }
+}

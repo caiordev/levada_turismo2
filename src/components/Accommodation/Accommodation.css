@@ -1,0 +1,162 @@
+.accommodation {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.accommodation-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.accommodation-header h2 {
+  color: #1565c0;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.accommodation-header p {
+  color: #1565c0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.accommodation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.accommodation-card {
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.accommodation-card:hover {
+  transform: translateY(-5px);
+}
+
+.accommodation-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.accommodation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.accommodation-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.accommodation-overlay p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 0.1rem;
+}
+
+.features li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.features li::before {
+  content: "•";
+  color: #034dfc;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.contact-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #034dfc;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.contact-button:hover {
+  background-color: #034dfc;
+}
+
+@media (max-width: 768px) {
+  .accommodation {
+    padding: 1rem;
+  }
+
+  .accommodation-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .accommodation-card {
+    scroll-snap-align: start;
+  }
+  
+  .accommodation-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .accommodation-grid {
+    scrollbar-width: none;
+  }
+
+  .accommodation-card {
+    height: 400px;
+  }
+
+  .accommodation-overlay h3 {
+    font-size: 1.5rem;
+  }
+
+  .accommodation-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .features li {
+    font-size: 0.8rem;
+  }
+}

@@ -5,8 +5,6 @@ import Home from './components/Home/Home'
 import About from './components/About/About'
 import OurTours from './components/OurTours/OurTours'
 import Transfer from './components/Transfer/Transfer'
-import AvailablePlaces from './components/AvailablePlaces'
-import Destinations from './components/Destinations/Destinations'
 import Contact from './components/Contact/Contact'
 import FAQ from './components/FAQ/FAQ'
 import Footer from './components/Footer/Footer'
@@ -15,8 +13,11 @@ import TourDetails from './components/TourDetails/TourDetails'
 import Places from './components/Places/Places'
 import Reviews from './components/Reviews/Reviews'
 import PlaceDetails from './components/PlaceDetails/PlaceDetails'
-import KayakTour from './components/KayakTour/KayakTour'
 import { createGlobalStyle } from 'styled-components'
+import TravelPackages from './components/TravelPackages/TravelPackages'
+import Accommodation from './components/Accommodation/Accommodation'
+import SeasonalInfo from './components/SeasonalInfo/SeasonalInfo'
+import RegionDetails from './components/RegionDetails/RegionDetails'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -50,12 +51,15 @@ function App() {
         <Routes>
           <Route path="/tour/:id" element={<TourDetails />} />
           <Route path="/place/:id" element={<PlaceDetails />} />
+          <Route path="/region" element={<RegionDetails />} />
           <Route path="/" element={
             <>
               <Home />
               <About />
               <OurTours />
-              <KayakTour />
+              <TravelPackages />
+              <Accommodation />
+              <SeasonalInfo />
               <Transfer />
               <Places />
               <Reviews />

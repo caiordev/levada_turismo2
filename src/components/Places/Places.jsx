@@ -4,29 +4,41 @@ import { useNavigate } from 'react-router-dom';
 
 const PlacesSection = styled.section`
   padding: 80px 0;
-  background: #ffffff;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f4fe 100%);
   min-height: 100vh;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2196f3, #64b5f6);
+  }
 
   @media (max-width: 768px) {
-    padding: 40px 0;
+    padding: 1rem;
   }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   position: relative;
-  background: #ffffff;
 `;
 
 const SectionTitle = styled.h2`
   text-align: center;
   font-size: 2.5rem;
-  color: #333;
+  color: #1565c0;
   margin-bottom: 1rem;
   position: relative;
+  padding: 0 20px;
 
   &:after {
     content: '';
@@ -34,46 +46,63 @@ const SectionTitle = styled.h2`
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 100px;
     height: 3px;
-    background-color: #2196f3;
+    background: linear-gradient(90deg, #2196f3, #64b5f6);
   }
 
   @media (max-width: 768px) {
     font-size: 2rem;
+    padding: 1rem;
   }
 `;
 
 const SectionSubtitle = styled.p`
   text-align: center;
-  color: #666;
+  color: #546e7a;
   font-size: 1.1rem;
-  margin: 2rem 0 4rem;
+  margin: 2rem auto 3rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 20px;
+  line-height: 1.6;
 `;
 
 const PlacesContainer = styled.div`
   position: relative;
   width: 100%;
-  padding: 0 40px;
-  background: #ffffff;
+  padding: 0;
 
-  @media (max-width: 768px) {
-    padding: 0 20px;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &:before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0) 100%);
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(248, 249, 250, 1) 0%, rgba(248, 249, 250, 0) 100%);
   }
 `;
 
 const PlacesGrid = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px 0;
+  padding: 20px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  background: #ffffff;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   
   &::-webkit-scrollbar {
     display: none;
@@ -81,21 +110,25 @@ const PlacesGrid = styled.div`
 
   @media (max-width: 768px) {
     gap: 15px;
+    padding: 1rem;
   }
 `;
 
 const PlaceCard = styled.div`
-  flex: 0 0 350px;
+  flex: 0 0 300px;
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(33, 150, 243, 0.1);
   transition: all 0.3s ease;
   position: relative;
+  scroll-snap-align: start;
+  border: 1px solid rgba(33, 150, 243, 0.1);
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(33, 150, 243, 0.2);
+    border-color: rgba(33, 150, 243, 0.2);
 
     img {
       transform: scale(1.1);
@@ -110,7 +143,7 @@ const PlaceCard = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  height: 250px;
+  height: 200px;
 
   &::after {
     content: '';
@@ -131,60 +164,44 @@ const PlaceImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 `;
 
 const PlaceContent = styled.div`
   padding: 1.5rem;
-  position: relative;
-  background: white;
+  background: linear-gradient(to bottom, #fff, #f8f9fa);
+  border-top: 2px solid #2196f3;
 `;
 
 const PlaceName = styled.h3`
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: #1565c0;
   margin-bottom: 0.5rem;
-  font-weight: 600;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const PlaceDescription = styled.p`
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #546e7a;
   font-size: 0.95rem;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
+  line-height: 1.5;
+  margin-bottom: 1rem;
 `;
 
 const PlaceButton = styled.button`
-  background: #2196f3;
+  background: linear-gradient(90deg, #2196f3, #64b5f6);
   color: white;
   border: none;
-  padding: 12px 25px;
+  padding: 0.5rem 1rem;
   border-radius: 25px;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
-  font-size: 1rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 
   &:hover {
-    background: #1976d2;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-  }
-
-  svg {
-    font-size: 1.2rem;
+    transform: translateX(5px);
+    background: linear-gradient(90deg, #1976d2, #2196f3);
   }
 `;
 

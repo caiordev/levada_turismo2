@@ -106,15 +106,7 @@ const About = () => {
         <Content>
           <h2>Nossa História</h2>
           <p>
-            Desde 2015, a <span className="highlight">Levada Turismo</span> tem se dedicado a proporcionar 
-            experiências únicas nos Lençóis Maranhenses. Nossa jornada começou com um sonho: 
-            compartilhar as maravilhas naturais desta região extraordinária com visitantes 
-            de todo o mundo.
-          </p>
-          <p>
-            Com uma equipe apaixonada e experiente, nos especializamos em criar roteiros 
-            personalizados que combinam aventura, conforto e segurança. Nossa missão é 
-            transformar cada passeio em uma memória inesquecível.
+          Somos naturais da cidade de Barreirinhas, MA, e atuamos na atividade turística desde 1999 como agência receptiva e condutores de visitantes no Parque Nacional dos Lençóis Maranhenses. Em abril de 2017, formalizamos a empresa <span className="highlight">Levada Turismo</span>. O nome "Levada" foi inspirado no antigo sistema de irrigação que os primeiros habitantes da região usavam para molhar suas plantações. Eles cavavam valas no solo que se encontravam com o rio e, quando a maré subia, a água era transportada por essas valas, levando vida às plantações, pois onde há água, há vida. Esse processo é uma viagem de conhecimento e contemplação da natureza, assim como a experiência que queremos proporcionar com a Levada Turismo. Nosso objetivo é transportar vidas, levando passageiros de um lugar para outro com muito cuidado e segurança, garantindo qualidade e praticidade na sua viagem.
           </p>
           <div className="stats">
             <div className="stat-item">
