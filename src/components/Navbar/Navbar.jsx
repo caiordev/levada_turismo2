@@ -12,7 +12,7 @@ const Nav = styled.nav`
   z-index: 1000;
   background: ${props => props.scrolled ? 'white' : 'transparent'};
   transition: all 0.3s ease;
-  padding: ${props => props.scrolled ? '10px 0' : '20px 0'};
+  padding: ${props => props.scrolled ? '5px 0' : '10px 0'};
   box-shadow: ${props => props.scrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
 `;
 
@@ -67,7 +67,7 @@ const NavLink = styled.a`
   transition: color 0.3s ease;
   position: relative;
   cursor: pointer;
-
+  
   &:after {
     content: '';
     position: absolute;
@@ -131,7 +131,7 @@ const Navbar = () => {
       setScrolled(isScrolled);
 
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'tours', 'travel-packages', 'accommodation', 'transfer', 'contact', 'reviews', 'faq', 'location'];
+      const sections = ['home', 'about-section', 'tours', 'travel-packages', 'accommodation', 'transfer', 'contact', 'reviews', 'faq', 'location'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -172,9 +172,9 @@ const Navbar = () => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'Sobre' },
+    { id: 'about-section', label: 'Sobre' },
     { id: 'tours', label: 'Passeios' },
-    { id: 'travelpackages', label: 'Pacotes' },
+    { id: 'packages', label: 'Pacotes' },
     { id: 'accommodation', label: 'Acomodações' },
     { id: 'transfer', label: 'Transfer' },
     { id: 'contact', label: 'Contato' },
@@ -189,7 +189,7 @@ const Navbar = () => {
         <Logo to="/">
           <img src="/logo-removebg-preview.png" alt="Levada Turismo" />
         </Logo>
-        <MenuButton 
+        <MenuButton
           scrolled={scrolled}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -201,7 +201,7 @@ const Navbar = () => {
               <NavLink
                 scrolled={scrolled}
                 className={activeSection === item.id ? 'active' : ''}
-                onClick={() => scrollToSection(item.id)}
+              onClick={() => scrollToSection(item.id)}
               >
                 {item.label}
               </NavLink>

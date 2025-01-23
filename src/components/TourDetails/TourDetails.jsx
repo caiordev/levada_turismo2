@@ -14,12 +14,46 @@ const DetailsContainer = styled.div`
   }
 `;
 
-const Header = styled.div`
-  position: relative;
-  height: auto;
+const Header = styled.header`
+  width: 100%;
   margin-bottom: 2rem;
   border-radius: 15px;
   overflow: hidden;
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    img {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      img {
+        width: 80px;
+      }
+
+      h1 {
+        font-size: 1rem;
+      }
+    }
+  }
 `;
 
 const ImageGallery = styled.div`
@@ -779,6 +813,8 @@ const tourData = {
 const TourDetails = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const [showIndicator, setShowIndicator] = useState(true);
   const { id } = useParams();
   const tour = tourData[id];
@@ -798,17 +834,52 @@ const TourDetails = () => {
     setCurrentImage((prev) => (prev - 1 + tour.gallery.length) % tour.gallery.length);
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      // Swiped left, go to next image
+      nextImage();
+    } else {
+      // Swiped right, go to previous image
+      prevImage();
+    }
+
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
   if (!tour) return <div>Tour não encontrado</div>;
 
   return (
     <DetailsContainer>
       <Header>
+        <div className="header-top">
+          <img src="/logo-removebg-preview.png" alt="Logo" />
+          <h1>{tour.name}</h1>
+        </div>
         <ImageGallery>
           <div 
             className="gallery-container" 
             style={{ transform: `translateX(-${currentImage * 100}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
-            <img src={tour.mainImage} alt={tour.name} />
             {tour.gallery.map((image, index) => (
               <img key={index} src={image} alt={`${tour.name} - Imagem ${index + 1}`} />
             ))}
@@ -816,7 +887,7 @@ const TourDetails = () => {
           <GalleryArrow direction="left" onClick={prevImage} />
           <GalleryArrow direction="right" onClick={nextImage} />
           <GalleryDots>
-            {[...Array(tour.gallery.length + 1)].map((_, index) => (
+            {[...Array(tour.gallery.length)].map((_, index) => (
               <Dot 
                 key={index} 
                 active={currentImage === index} 
@@ -824,8 +895,9 @@ const TourDetails = () => {
               />
             ))}
           </GalleryDots>
+          {showIndicator && tour.gallery.length > 0 && <ScrollIndicator />}
         </ImageGallery>
-        {showIndicator && tour.gallery.length > 0 && <ScrollIndicator />}
+        
       </Header>
 
       <InfoSection>

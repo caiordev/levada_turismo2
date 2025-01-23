@@ -191,6 +191,8 @@ const slides = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const slideInterval = useRef(null);
   const navigate = useNavigate();
 
@@ -213,9 +215,43 @@ const Home = () => {
     navigate(`/region/${slides[currentSlide].id}`);
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      // Swiped left, go to next slide
+      setCurrentSlide(current => (current + 1) % slides.length);
+    } else {
+      // Swiped right, go to previous slide
+      setCurrentSlide(current => (current - 1 + slides.length) % slides.length);
+    }
+
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
   return (
     <HomeSection id="home">
-      <SlideContainer translate={-currentSlide * 100}>
+      <SlideContainer 
+        translate={-currentSlide * 100}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, index) => (
           <SlideItem key={index} image={slide.image}>
             <Content>

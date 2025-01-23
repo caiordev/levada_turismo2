@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home'
 import About from './components/About/About'
@@ -42,32 +42,43 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const AppContent = () => {
+  const location = useLocation();
+  const isTourDetails = location.pathname.includes('/tour/');
+
+  return (
+    <>
+      {!isTourDetails && <Navbar />}
+      <Routes>
+        <Route path="/tour/:id" element={<TourDetails />} />
+        <Route path="/place/:id" element={<PlaceDetails />} />
+        <Route path="/region/:id" element={<RegionDetails />} />
+        <Route path="/" element={
+          <>
+            <Home />
+            <About />
+            <OurTours />
+            <TravelPackages />
+            <Accommodation />
+            <SeasonalInfo />
+            <Transfer />
+            <Reviews />
+            <FAQ />
+            <Contact />
+          </>
+        } />
+      </Routes>
+      {!isTourDetails && <Footer />}
+    </>
+  );
+};
+
 function App() {
   return (
     <Router>
       <GlobalStyle />
       <div>
-        <Navbar />
-        <Routes>
-          <Route path="/tour/:id" element={<TourDetails />} />
-          <Route path="/place/:id" element={<PlaceDetails />} />
-          <Route path="/region/:id" element={<RegionDetails />} />
-          <Route path="/" element={
-            <>
-              <Home />
-              <About />
-              <OurTours />
-              <TravelPackages />
-              <Accommodation />
-              <SeasonalInfo />
-              <Transfer />
-              <Reviews />
-              <FAQ />
-              <Contact />
-            </>
-          } />
-        </Routes>
-        <Footer />
+        <AppContent />
         <WhatsAppFloat />
       </div>
     </Router>
