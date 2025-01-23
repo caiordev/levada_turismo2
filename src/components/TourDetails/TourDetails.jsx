@@ -22,56 +22,84 @@ const Header = styled.div`
   overflow: hidden;
 `;
 
-const GalleryGrid = styled.div`
-  display: flex;
-  overflow-x: auto;
-  gap: 1.5rem;
-  padding: 1rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  background: #f8f9fa;
+const ImageGallery = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   border-radius: 15px;
-  
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 768px) {
-    padding: 0.5rem;
-    gap: 1rem;
-    background: transparent;
+  .gallery-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    aspect-ratio: 16/9;
   }
 `;
 
-const GalleryImage = styled.div`
-  flex: 0 0 100%;
-  height: 60vh;
-  background-image: url(${props => props.image});
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
+const GalleryArrow = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  ${props => props.direction === 'left' ? 'left: 20px;' : 'right: 20px;'}
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  scroll-snap-align: start;
-
-  &:not(:first-child) {
-    flex: 0 0 100%;
-  }
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  z-index: 2;
 
   &:hover {
-    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  &::before {
+    content: ${props => props.direction === 'left' ? '"❮"' : '"❯"'};
+    font-size: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    height: 40vh;
-    flex: 0 0 100%;
-    
-    &:not(:first-child) {
-      flex: 0 0 100%;
-    }
+    width: 35px;
+    height: 35px;
+    ${props => props.direction === 'left' ? 'left: 10px;' : 'right: 10px;'}
+  }
+`;
+
+const GalleryDots = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+`;
+
+const Dot = styled.button`
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: ${props => props.active ? 'white' : 'rgba(255, 255, 255, 0.5)'};
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: white;
   }
 `;
 
@@ -750,6 +778,7 @@ const tourData = {
 
 const TourDetails = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
   const [showIndicator, setShowIndicator] = useState(true);
   const { id } = useParams();
   const tour = tourData[id];
@@ -761,24 +790,41 @@ const TourDetails = () => {
     }
   };
 
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % tour.gallery.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + tour.gallery.length) % tour.gallery.length);
+  };
+
   if (!tour) return <div>Tour não encontrado</div>;
 
   return (
     <DetailsContainer>
       <Header>
-        <GalleryGrid onScroll={handleScroll}>
-          <GalleryImage
-            image={tour.mainImage}
-            onClick={() => setSelectedImage(tour.mainImage)}
-          />
-          {tour.gallery.map((image, index) => (
-            <GalleryImage
-              key={index}
-              image={image}
-              onClick={() => setSelectedImage(image)}
-            />
-          ))}
-        </GalleryGrid>
+        <ImageGallery>
+          <div 
+            className="gallery-container" 
+            style={{ transform: `translateX(-${currentImage * 100}%)` }}
+          >
+            <img src={tour.mainImage} alt={tour.name} />
+            {tour.gallery.map((image, index) => (
+              <img key={index} src={image} alt={`${tour.name} - Imagem ${index + 1}`} />
+            ))}
+          </div>
+          <GalleryArrow direction="left" onClick={prevImage} />
+          <GalleryArrow direction="right" onClick={nextImage} />
+          <GalleryDots>
+            {[...Array(tour.gallery.length + 1)].map((_, index) => (
+              <Dot 
+                key={index} 
+                active={currentImage === index} 
+                onClick={() => setCurrentImage(index)}
+              />
+            ))}
+          </GalleryDots>
+        </ImageGallery>
         {showIndicator && tour.gallery.length > 0 && <ScrollIndicator />}
       </Header>
 
