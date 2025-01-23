@@ -897,7 +897,6 @@ const TourDetails = () => {
           </GalleryDots>
           {showIndicator && tour.gallery.length > 0 && <ScrollIndicator />}
         </ImageGallery>
-        
       </Header>
 
       <InfoSection>
