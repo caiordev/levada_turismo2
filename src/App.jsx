@@ -61,7 +61,6 @@ function App() {
               <Accommodation />
               <SeasonalInfo />
               <Transfer />
-              <Places />
               <Reviews />
               <FAQ />
               <Contact />
