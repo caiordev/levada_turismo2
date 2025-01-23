@@ -131,7 +131,7 @@ const Navbar = () => {
       setScrolled(isScrolled);
 
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'tours', 'places', 'contact', 'reviews', 'faq'];
+      const sections = ['home', 'about', 'tours', 'travel-packages', 'accommodation', 'transfer', 'contact', 'reviews', 'faq', 'location'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -174,10 +174,13 @@ const Navbar = () => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'Sobre' },
     { id: 'tours', label: 'Passeios' },
-    { id: 'places', label: 'Lugares' },
+    { id: 'travelpackages', label: 'Pacotes' },
+    { id: 'accommodation', label: 'Acomodações' },
+    { id: 'transfer', label: 'Transfer' },
     { id: 'contact', label: 'Contato' },
     { id: 'reviews', label: 'Avaliações' },
-    { id: 'faq', label: 'FAQ' }
+    { id: 'faq', label: 'FAQ' },
+    { id: 'location', label: 'Localização' }
   ];
 
   return (

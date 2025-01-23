@@ -56,7 +56,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  background: linear-gradient(to bottom, rgba(80, 80, 80, 0.301), rgba(32, 32, 32, 0.9));
   padding: 2rem;
   color: white;
   display: flex;
@@ -89,7 +89,7 @@
 
 .features li::before {
   content: "•";
-  color: #034dfc;
+  color: #1565c0;
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
@@ -98,7 +98,7 @@
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 25px;
-  background-color: #034dfc;
+  background-color: #1565c0;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -112,7 +112,7 @@
 }
 
 .contact-button:hover {
-  background-color: #034dfc;
+  background-color: #1565c0;
 }
 
 @media (max-width: 768px) {

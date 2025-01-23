@@ -12,7 +12,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -23,13 +23,16 @@ const Container = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   border-radius: 15px;
+  margin-top: 6.5rem;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4/3;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.3s ease;
   }
 
@@ -38,15 +41,17 @@ const ImageWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 300px;
+    aspect-ratio: 16/9;
   }
 `;
 
 const Content = styled.div`
+  padding-right: 2rem;
+
   h2 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     position: relative;
 
     &:after {
@@ -64,7 +69,9 @@ const Content = styled.div`
     font-size: 1.1rem;
     color: #666;
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+    hyphens: auto;
   }
 
   .highlight {
@@ -94,6 +101,10 @@ const Content = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding-right: 0;
+  }
 `;
 
 const About = () => {
@@ -106,7 +117,7 @@ const About = () => {
         <Content>
           <h2>Nossa História</h2>
           <p>
-          Somos naturais da cidade de Barreirinhas, MA, e atuamos na atividade turística desde 1999 como agência receptiva e condutores de visitantes no Parque Nacional dos Lençóis Maranhenses. Em abril de 2017, formalizamos a empresa <span className="highlight">Levada Turismo</span>. O nome "Levada" foi inspirado no antigo sistema de irrigação que os primeiros habitantes da região usavam para molhar suas plantações. Eles cavavam valas no solo que se encontravam com o rio e, quando a maré subia, a água era transportada por essas valas, levando vida às plantações, pois onde há água, há vida. Esse processo é uma viagem de conhecimento e contemplação da natureza, assim como a experiência que queremos proporcionar com a Levada Turismo. Nosso objetivo é transportar vidas, levando passageiros de um lugar para outro com muito cuidado e segurança, garantindo qualidade e praticidade na sua viagem.
+            Somos naturais da cidade de Barreirinhas, MA, e atuamos na atividade turística desde 1999 como agência receptiva e condutores de visitantes no Parque Nacional dos Lençóis Maranhenses. Em abril de 2017, formalizamos a empresa <span className="highlight">Levada Turismo</span>. O nome "Levada" foi inspirado no antigo sistema de irrigação que os primeiros habitantes da região usavam para molhar suas plantações. Eles cavavam valas no solo que se encontravam com o rio e, quando a maré subia, a água era transportada por essas valas, levando vida às plantações, pois onde há água, há vida. Esse processo é uma viagem de conhecimento e contemplação da natureza, assim como a experiência que queremos proporcionar com a Levada Turismo. Nosso objetivo é transportar vidas, levando passageiros de um lugar para outro com muito cuidado e segurança, garantindo qualidade e praticidade na sua viagem.
           </p>
           <div className="stats">
             <div className="stat-item">

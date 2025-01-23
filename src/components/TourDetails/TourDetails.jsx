@@ -708,10 +708,10 @@ const tourData = {
       recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
     },
     gallery: [
-      '/Lencois-1.jpg',
-      '/lencois-maranhenses.jpg',
-      '/lencois-maranhenses-hurb-2839.jpeg',
-      '/parque-nacional-dos-lencois.jpg'
+      '/caiaque/caiaque1.jpeg',
+      '/caiaque/caiaque2.jpeg',
+      '/caiaque/caiaque3.jpeg',
+      '/caiaque/caiaque4.jpeg'
     ],
     videoUrl: 'https://youtube.com/shorts/XKfCEsUyISQ?feature=share',
     itinerary: [

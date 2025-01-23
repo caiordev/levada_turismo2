@@ -15,7 +15,7 @@ const seasons = [
       'Temperatura mais amena'
     ],
     recommendation: 'Ideal para ver a formação das lagoas e a paisagem mais verde.',
-    image: '/chuva-lencois.jpg'
+    image: '/lagoa-azul/lagoa-azul-meio-cheio.jpg'
   },
   {
     id: 'lagoas-cheias',
@@ -45,7 +45,7 @@ const seasons = [
       'Preços mais acessíveis'
     ],
     recommendation: 'Bom para quem prefere menor movimento turístico e não se importa com lagoas menores.',
-    image: '/periodo-seco.jpg'
+    image: '/lagoa-azul/lagoa-azul-seca.jpg'
   }
 ];
 

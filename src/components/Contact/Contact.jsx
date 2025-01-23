@@ -129,7 +129,7 @@ const Contact = () => {
               <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" />
               <div>
                 <h3>Endereço</h3>
-                <p>Av. Beira Rio, 123 - Centro<br />Barreirinhas - MA, 65590-000</p>
+                <p>R. Cincinato Ribeiro Rêgo, 155 - Cebola<br />Barreirinhas - MA, 65590-000</p>
               </div>
             </InfoItem>
             <InfoItem>
@@ -143,14 +143,14 @@ const Contact = () => {
               <FontAwesomeIcon icon={faPhone} className="icon" />
               <div>
                 <h3>Telefone</h3>
-                <p>(98) 99999-9999</p>
+                <p>(98) 99133-3370</p>
               </div>
             </InfoItem>
             <InfoItem>
               <FontAwesomeIcon icon={faEnvelope} className="icon" />
               <div>
                 <h3>E-mail</h3>
-                <p>contato@lencoisturismo.com</p>
+                <p>levadaturismo@gmail.com</p>
               </div>
             </InfoItem>
             <DirectionsButton 
