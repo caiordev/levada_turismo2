@@ -346,12 +346,11 @@ const tourData = {
     name: 'Lagoa Azul',
     rating: 5.0,
     mainImage: '/lencois-maranhenses.jpg',
-    description: 'A Lagoa Azul é uma das mais famosas e belas lagoas dos Lençóis Maranhenses. Com suas águas cristalinas e areias brancas, oferece uma experiência única de banho e contemplação da natureza.',
-    longDescription: 'Durante o passeio, você terá a oportunidade de conhecer diversas lagoas da região, com paradas estratégicas para banho e fotos. Nossos guias experientes compartilharão informações sobre a formação do parque e curiosidades sobre a fauna e flora local.',
+    description: 'Saíremos em um veículo 4x4 em direção ao Parque Nacional. Nossa aventura começa percorrendo estradas de areia, com duração de aproximadamente 45 minutos, até chegarmos ao circuito da Lagoa Azul. A partir daí, caminharemos pelas dunas, passando por várias outras lagoas (durante a época de cheia). Visitaremos a Lagoa Azul, a Lagoa da Esmeralda e a Lagoa dos Toyoteiros. Poderemos tomar um maravilhoso banho nas lagoas e apreciar a beleza dos Lençóis Maranhenses. Por volta das 12:00 horas, retornaremos ao veículo para voltar a Barreirinhas, chegando na cidade entre 13:00 horas.',
     details: {
       duration: '4 horas',
       difficulty: 'Moderada',
-      included: ['Transfer 4x4', 'Guia local', 'Água mineral', 'Seguro viagem'],
+      included: ['Transfer 4x4', 'Guia local'],
       recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
     },
     gallery: [
@@ -361,17 +360,16 @@ const tourData = {
       '/parque-nacional-dos-lencois.jpg'
     ]
   },
-  'farol-mandacaru': {
-    name: 'Farol Mandacaru',
+  'lagoa-bonita': {
+    name: 'Lagoa Bonita',
     rating: 5.0,
-    mainImage: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
-    description: 'Visite o histórico Farol de Mandacaru e desfrute de uma vista panorâmica espetacular da região.',
-    longDescription: 'O passeio ao Farol de Mandacaru é uma experiência única que combina história e natureza. Do alto do farol, você terá uma vista privilegiada do encontro do Rio Preguiças com o mar, além de poder observar toda a região dos Lençóis Maranhenses.',
+    mainImage: '/circuito-lagoa-bonita.webp',
+    description: 'Seguiremos em direção ao Parque Nacional em um veículo 4x4. Vamos para o Circuito da Lagoa Bonita, onde teremos a sensação de estar em meio a um grande deserto, um deserto muito especial e cheio de lagoas (durante a época de cheia). Após deliciosos banhos e um agradável entardecer, retornaremos para Barreirinhas.',
     details: {
       duration: '3 horas',
       difficulty: 'Fácil',
-      included: ['Transporte de barco', 'Guia local', 'Água mineral', 'Seguro viagem'],
-      recommendations: ['Protetor solar', 'Chapéu/boné', 'Câmera', 'Dinheiro para artesanato']
+      included: ['Transporte de barco', 'Guia local'],
+      recommendations: ['Protetor solar', 'Chapéu/boné', 'Câmera']
     },
     gallery: [
       '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
@@ -379,24 +377,96 @@ const tourData = {
       '/caiaque6.jpeg'
     ]
   },
-  'passeio-barco': {
-    name: 'Passeio de Barco',
+  'lagoa-azul-bonito': {
+    name: 'Lagoa Azul + Lagoa Bonita',
     rating: 5.0,
-    mainImage: '/BarreirinhasPortal.jpg',
-    description: 'Navegue pelo Rio Preguiças com paradas em pontos turísticos.',
-    longDescription: 'Um passeio relaxante pelo Rio Preguiças, onde você conhecerá diversos pontos turísticos e poderá apreciar a natureza local. O passeio inclui paradas em comunidades ribeirinhas e pontos de interesse histórico.',
+    mainImage: '/lagoa-azul-bonita.jpeg',
+    description: 'Após o café da manhã, iniciaremos nossa jornada em um veículo 4x4 rumo ao Parque Nacional dos Lençóis Maranhenses. A aventura começa atravessando estradas de areia até o circuito da Lagoa Azul. Lá, iniciaremos uma caminhada pelas imponentes dunas, contemplando diversas lagoas ao longo do caminho (presentes durante a época da cheia). Seguiremos em direção à Lagoa Bonita, com uma parada estratégica em um restaurante local para saborear um almoço típico e recarregar as energias. Após um breve descanso, continuaremos até a Lagoa Bonita, um cenário único que transmite a sensação de estar em um vasto deserto repleto de lagoas cristalinas. Aproveitaremos deliciosos banhos e um inesquecível pôr do sol antes de retornar para Barreirinhas, fechando o dia com memórias encantadoras desse paraíso natural.',
     details: {
-      duration: '6 horas',
-      difficulty: 'Fácil',
-      included: ['Barco', 'Guia especializado', 'Almoço', 'Seguro viagem'],
-      recommendations: ['Protetor solar', 'Roupas leves', 'Câmera', 'Dinheiro extra']
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
     },
     gallery: [
-      '/BarreirinhasPortal.jpg',
-      '/caiaque6.jpeg',
-      '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp'
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
     ]
-  }
+  },
+  'atins': {
+    name: 'Atins - Parque Nacional - Canto do Atins',
+    rating: 5.0,
+    mainImage: '/lencois-maranhenses.jpg',
+    description: 'Após o café da manhã, sairemos em um veículo 4x4 até o Parque Nacional dos Lençóis Maranhenses, desta vez mais próximos ao mar. Passamos inicialmente pela Praia de Atins e, de lá, seguimos ao início das dunas do parque. Paramos o veículo, e sobre uma das inúmeras dunas teremos uma linda vista do parque, que se estende até o Canto do Atins e o mar. Seguimos então à Praia dos Lençóis, onde as dunas se aproximam do mar. Aqui, podemos tomar um banho de mar. Na época das chuvas, veremos uma pequena cachoeira que se forma junto ao mar. Seguimos então para as lagoas do Gavião, do Kite e outras lagoas mais, que nos permitem escolher em qual delas queremos desfrutar de deliciosos banhos. Agora já é hora de recompor as energias com um delicioso almoço no Canto do Atins. Luzia ou Antônio, em qual das duas barracas iremos comer aquele camarão fresco ou o peixe pescado há pouco? Difícil escolha... À tarde, lembrando que estamos no Nordeste, onde o dia é sempre quente, seguimos à Lagoa Tropical e à Lagoa da Esmeralda para mais alguns mergulhos deliciosos. No final do dia, voltamos ao nosso hotel. Horário: das 08:30 às 17:00, chegando na cidade.',
+    details: {
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+    },
+    gallery: [
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
+    ]
+  },
+  'vassouras-mandacaru-caburé': {
+    name: 'Vassouras, Mandacaru e Caburé',
+    rating: 5.0,
+    mainImage: '/mandacaru.webp',
+    description: 'Após o café da manhã, sairemos em voadeira Rio Preguiças abaixo em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminhamos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé. É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças. Quando a entrada no mesmo está liberada, a sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar.',
+    details: {
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+    },
+    gallery: [
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
+    ]
+  },
+  'pequenos-lencois': {
+    name: 'Pequenos Lençóis',
+    rating: 5.0,
+    mainImage: '/pequenos-lencois.jpg',
+    description: 'passeio de Quadriciclo, saída as 09:00hs.destino para os pequenos lençóis,Parque eólico, você vai pilotar o quadriciclo, cruzando as dunas dos pequenos lençóis. Parada nas lagoas de água doce aonde se pode mergulhar a vontade na lagoa do Alazão,Caités, próxima parada praia do caburé parada para o almoço e banho na praia, estamos de volta as 16hs:3',
+    details: {
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+    },
+    gallery: [
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
+    ]
+  },
+  'cardosa': {
+    name: 'Cardosa',
+    rating: 5.0,
+    mainImage: '/cardosa.webp',
+    description: 'Partiremos de Barreirinhas em um veículo 4x4 em direção ao povoado de Cardosa, em uma viagem de aproximadamente 1 hora. Ao chegar, encontraremos o Rio Formiga, um rio de águas cristalinas e temperatura muito agradável. Lá, faremos uma descida em boias infláveis durante 1 hora, acompanhados de guias locais.',
+    details: {
+      duration: '4 horas',
+      difficulty: 'Moderada',
+      included: ['Transfer 4x4', 'Guia local'],
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+    },
+    gallery: [
+      '/Lencois-1.jpg',
+      '/lencois-maranhenses.jpg',
+      '/lencois-maranhenses-hurb-2839.jpeg',
+      '/parque-nacional-dos-lencois.jpg'
+    ]
+  },
 };
 
 const TourDetails = () => {
@@ -436,7 +506,7 @@ const TourDetails = () => {
       <InfoSection>
         <Description>
           <h2>Sobre o Passeio</h2>
-          <p>{tour.longDescription}</p>
+          <p>{tour.description}</p>
         </Description>
       </InfoSection>
 

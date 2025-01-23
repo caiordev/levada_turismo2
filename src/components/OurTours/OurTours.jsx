@@ -6,22 +6,50 @@ const tours = [
   {
     id: 'lagoa-azul',
     name: 'Lagoa Azul',
-    description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
+    description: 'Passeio de uma manhã inteira por lagoas dos lençóis maranhenses, com paradas para banho e fotos.',
     image: '/lencois-maranhenses.jpg',
     rating: 5.0
   },
   {
-    id: 'farol-mandacaru',
-    name: 'Farol Mandacaru',
-    description: 'Visita ao histórico Farol de Mandacaru com vista panorâmica da região.',
-    image: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
+    id: 'lagoa-bonita',
+    name: 'Lagoa Bonita',
+    description: 'Passeio para apreciar o pôr do sol na Lagoa Bonita, com vista panorâmica dos lençóis maranhenses.',
+    image: '/circuito-lagoa-bonita.webp',
     rating: 5.0
   },
   {
-    id: 'passeio-barco',
-    name: 'Passeio de Barco',
-    description: 'Navegue pelo Rio Preguiças com paradas em pontos turísticos.',
-    image: '/BarreirinhasPortal.jpg',
+    id: 'lagoa-azul-bonito',
+    name: 'Lagoa Azul + Lagoa Bonita',
+    description: 'Passeio completo por lagoas dos lençóis maranhenses, incluindo Lagoa Azul e Lagoa Bonita.',
+    image: '/lagoa-azul-bonita.jpeg',
+    rating: 5.0
+  },
+  {
+    id: 'atins',
+    name: 'Atins',
+    description: 'Passeio de um dia inteiro até Atins, com paradas para banho e almoço em restaurante local.',
+    image: '/atins.webp',
+    rating: 5.0
+  },
+  {
+    id: 'vassouras-mandacaru-caburé',
+    name: 'Vassouras, Mandacaru e Caburé',
+    description: 'Passeio de um dia inteiro por Vassouras, Mandacaru e Caburé, com almoço em Caburé.',
+    image: '/mandacaru.webp',
+    rating: 5.0
+  },
+  {
+    id: 'pequenos-lencois',
+    name: 'Pequenos Lençóis',
+    description: 'Passeio de um dia inteiro pelos pequenos lençóis, com paradas para banho e almoço em restaurante local.',
+    image: '/pequenos-lencois.jpg',
+    rating: 5.0
+  },
+  {
+    id: 'cardosa',
+    name: 'Cardosa',
+    description: 'Flutuação no Rio Cardosa, descida de boia e parada para banho em lagoa.',
+    image: '/cardosa.webp',
     rating: 5.0
   },
   {
@@ -30,12 +58,6 @@ const tours = [
     description: 'Uma experiência única de caiaque pelas águas cristalinas do Rio Preguiças, explorando a natureza de perto.',
     image: '/caiaque6.jpeg',
     rating: 5.0,
-    highlights: [
-      'Instrutor experiente',
-      'Equipamentos de segurança inclusos',
-      'Duração: 3 horas',
-      'Nível: iniciante a intermediário'
-    ]
   }
 ];
 
@@ -48,7 +70,7 @@ const OurTours = () => {
   };
 
   const handleReservar = (tourName) => {
-    const phoneNumber = "5598981876833"; // Substitua pelo número correto
+    const phoneNumber = "5598991333370"; // Substitua pelo número correto
     const message = `Olá! Gostaria de mais informações sobre o passeio: ${tourName}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

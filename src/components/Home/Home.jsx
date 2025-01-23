@@ -163,7 +163,7 @@ const slides = [
     description: 'Descubra o paraíso das dunas e lagoas cristalinas'
   },
   {
-    image: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
+    image: '/mandacaru.webp',
     name: 'Mandacaru',
     description: 'Explore a história e a vista panorâmica da região'
   },
