@@ -51,7 +51,7 @@ function App() {
         <Routes>
           <Route path="/tour/:id" element={<TourDetails />} />
           <Route path="/place/:id" element={<PlaceDetails />} />
-          <Route path="/region" element={<RegionDetails />} />
+          <Route path="/region/:id" element={<RegionDetails />} />
           <Route path="/" element={
             <>
               <Home />

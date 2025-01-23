@@ -158,26 +158,31 @@ const ArrowButton = styled.button`
 
 const slides = [
   {
+    id: 'lencois-maranhenses',
     image: '/lencois-maranhenses.jpg',
     name: 'Lençóis Maranhenses',
     description: 'Descubra o paraíso das dunas e lagoas cristalinas'
   },
   {
+    id: 'mandacaru',
     image: '/mandacaru.webp',
     name: 'Mandacaru',
     description: 'Explore a história e a vista panorâmica da região'
   },
   {
+    id: 'atins',
     image: '/atins.webp',
     name: 'Atins',
     description: 'Explore as praias desertas e a natureza selvagem'
   },
   {
+    id: 'pequenos-lencois',
     image: '/pequenos-lencois.jpg',
     name: 'Pequenos Lençóis',
     description: 'Navegue pelas águas tranquilas e conheça a natureza local'
   },
   {
+    id: 'cardosa',
     image: '/cardosa.webp',
     name: 'Povoado Cardosa',
     description: 'Navegue pelas águas tranquilas e conheça a natureza local'
@@ -205,7 +210,7 @@ const Home = () => {
   };
 
   const handleExplore = () => {
-    navigate('/region');
+    navigate(`/region/${slides[currentSlide].id}`);
   };
 
   return (

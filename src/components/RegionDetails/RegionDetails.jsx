@@ -1,121 +1,317 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './RegionDetails.css';
 
-const regionInfo = {
-  title: "Lençóis Maranhenses",
-  description: `O Parque Nacional dos Lençóis Maranhenses é uma das maravilhas naturais mais impressionantes do Brasil. 
-  Com suas vastas dunas de areia branca que se estendem por quilômetros e lagoas de água cristalina, o parque oferece 
-  uma paisagem única que parece saída de um sonho. Durante a temporada de chuvas, milhares de lagoas de água doce se 
-  formam entre as dunas, criando um espetáculo visual deslumbrante.`,
-  highlights: [
-    "Dunas de areia branca que se estendem por 155 mil hectares",
-    "Lagoas de água cristalina com temperatura ideal para banho",
-    "Pôr do sol espetacular sobre as dunas",
-    "Fauna e flora únicas da região",
-    "Experiência cultural com comunidades locais"
-  ],
-  images: [
-    {
-      url: "/lencois1.jpg",
-      caption: "Vista aérea das dunas e lagoas"
-    },
-    {
-      url: "/lencois2.jpg",
-      caption: "Lagoa Azul ao pôr do sol"
-    },
-    {
-      url: "/lencois3.jpg",
-      caption: "Dunas e vegetação nativa"
-    },
-    {
-      url: "/lencois4.jpg",
-      caption: "Passeio de barco no Rio Preguiças"
-    }
-  ],
-  bestTime: {
-    title: "Melhor época para visitar",
-    periods: [
+const regionsData = {
+  'lencois-maranhenses': {
+    title: "Lençóis Maranhenses",
+    description: `O Parque Nacional dos Lençóis Maranhenses é uma das maravilhas naturais mais impressionantes do Brasil. 
+    Com suas vastas dunas de areia branca que se estendem por quilômetros e lagoas de água cristalina, o parque oferece 
+    uma paisagem única que parece saída de um sonho. Durante a temporada de chuvas, milhares de lagoas de água doce se 
+    formam entre as dunas, criando um espetáculo visual deslumbrante.`,
+    highlights: [
+      "Dunas de areia branca que se estendem por 155 mil hectares",
+      "Lagoas de água cristalina com temperatura ideal para banho",
+      "Pôr do sol espetacular sobre as dunas",
+      "Fauna e flora únicas da região",
+      "Experiência cultural com comunidades locais"
+    ],
+    images: [
       {
-        season: "Alta temporada",
-        months: "Julho a Setembro",
-        description: "Lagoas cheias e clima perfeito"
+        url: "/lagoa-azul/lagoa-azul-vista-aerea.jpeg",
+        caption: "Vista aérea das dunas e lagoas"
       },
       {
-        season: "Temporada de chuvas",
-        months: "Janeiro a Junho",
-        description: "Formação das lagoas"
+        url: "/lagoa-azul/lagoa-azul-por-do-sol.jpeg",
+        caption: "Lagoa Azul ao pôr do sol"
       },
       {
-        season: "Baixa temporada",
-        months: "Outubro a Dezembro",
-        description: "Menos turistas e preços mais baixos"
+        url: "/lagoa-azul/lagoa-azul.jpeg",
+        caption: "Dunas e vegetação nativa"
+      },
+      {
+        url: "/lagoa-azul/lagoa-azul2.jpeg",
+        caption: "Lagoa com água cristalina"
+      }
+    ],
+    bestTime: {
+      title: "Melhor época para visitar",
+      periods: [
+        {
+          season: "Alta temporada",
+          months: "Julho a Setembro",
+          description: "Lagoas cheias e clima perfeito"
+        },
+        {
+          season: "Temporada de chuvas",
+          months: "Janeiro a Junho",
+          description: "Formação das lagoas"
+        },
+        {
+          season: "Baixa temporada",
+          months: "Outubro a Dezembro",
+          description: "Menos turistas e preços mais baixos"
+        }
+      ]
+    },
+    tours: [
+      {
+        id: 'lagoa-azul',
+        name: 'Lagoa Azul',
+        description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
+        image: '/lencois-maranhenses.jpg',
+        duration: '8 horas',
+        includes: [
+          'Transfer hotel-parque-hotel',
+          'Guia especializado',
+          'Água mineral',
+          'Seguro viagem'
+        ],
+        price: 'A partir de R$ 150'
+      }
+    ]
+  },
+  
+  'mandacaru': {
+    title: "Mandacaru",
+    description: `Mandacaru é uma charmosa vila de pescadores localizada às margens do Rio Preguiças. 
+    O local é famoso por seu farol histórico, que oferece uma vista panorâmica deslumbrante da região, 
+    incluindo as dunas dos Lençóis Maranhenses, o rio e o oceano.`,
+    highlights: [
+      "Farol histórico com vista panorâmica",
+      "Comunidade tradicional de pescadores",
+      "Artesanato local",
+      "Gastronomia típica",
+      "Pôr do sol espetacular"
+    ],
+    images: [
+      {
+        url: "/mandacaru1.jpg",
+        caption: "Farol de Mandacaru"
+      },
+      {
+        url: "/mandacaru2.jpg",
+        caption: "Vista do Rio Preguiças"
+      }
+    ],
+    bestTime: {
+      title: "Melhor época para visitar",
+      periods: [
+        {
+          season: "Alta temporada",
+          months: "Julho a Setembro",
+          description: "Clima agradável e dias ensolarados"
+        },
+        {
+          season: "Baixa temporada",
+          months: "Outubro a Junho",
+          description: "Menos turistas e preços mais acessíveis"
+        }
+      ]
+    },
+    tours: [
+      {
+        id: 'farol-tour',
+        name: 'Tour do Farol',
+        description: 'Visita guiada ao Farol de Mandacaru com explicações históricas.',
+        image: '/mandacaru.webp',
+        duration: '3 horas',
+        includes: [
+          'Guia local',
+          'Entrada no farol',
+          'Água mineral'
+        ],
+        price: 'A partir de R$ 80'
+      }
+    ]
+  },
+  'atins': {
+    title: "Atins",
+    description: `Atins é um paraíso escondido entre as dunas dos Lençóis Maranhenses e o mar. 
+    Esta vila de pescadores preserva sua autenticidade com ruas de areia, casas simples e uma atmosfera tranquila. 
+    É um destino perfeito para quem busca contato direto com a natureza e experiências únicas.`,
+    highlights: [
+      "Praias desertas e inexploradas",
+      "Acesso privilegiado aos Lençóis Maranhenses",
+      "Esportes aquáticos como kitesurf",
+      "Gastronomia local autêntica",
+      "Pousadas charmosas e acolhedoras"
+    ],
+    images: [
+      {
+        url: "/atins/atins1.jpeg",
+        caption: "Praia de Atins"
+      },
+      {
+        url: "/atins/atins2.jpeg",
+        caption: "Dunas e mar"
+      },
+      {
+        url: "/atins/atins3.jpeg",
+        caption: "Pôr do sol em Atins"
+      },
+      {
+        url: "/atins/atins4.jpeg",
+        caption: "Vila de pescadores"
+      }
+    ],
+    bestTime: {
+      title: "Melhor época para visitar",
+      periods: [
+        {
+          season: "Alta temporada",
+          months: "Julho a Dezembro",
+          description: "Ventos ideais para kitesurf"
+        },
+        {
+          season: "Baixa temporada",
+          months: "Janeiro a Junho",
+          description: "Período de chuvas, lagoas cheias"
+        }
+      ]
+    },
+    tours: [
+      {
+        id: 'atins-aventura',
+        name: 'Atins Aventura',
+        description: 'Explore as dunas, praias e lagoas da região de Atins.',
+        image: '/atins.webp',
+        duration: '6 horas',
+        includes: [
+          'Transporte 4x4',
+          'Guia especializado',
+          'Água mineral',
+          'Paradas para banho'
+        ],
+        price: 'A partir de R$ 180'
+      }
+    ]
+  },
+  'pequenos-lencois': {
+    title: "Pequenos Lençóis",
+    description: `Os Pequenos Lençóis Maranhenses são uma extensão igualmente deslumbrante do parque principal, 
+    oferecendo uma experiência mais intimista e exclusiva. A região apresenta dunas menores, mas igualmente 
+    impressionantes, além de lagoas cristalinas e uma vegetação exuberante.`,
+    highlights: [
+      "Dunas e lagoas menos movimentadas",
+      "Experiência mais exclusiva",
+      "Vegetação de mangue preservada",
+      "Passeios de barco pelo Rio Preguiças",
+      "Comunidades tradicionais"
+    ],
+    images: [
+      {
+        url: "/pequenos-lencois/pequenos1.jpeg",
+        caption: "Vista aérea dos Pequenos Lençóis"
+      },
+      {
+        url: "/pequenos-lencois/pequenos2.jpeg",
+        caption: "Lagoas cristalinas"
+      },
+      {
+        url: "/pequenos-lencois/pequenos3.jpeg",
+        caption: "Dunas e vegetação"
+      }
+    ],
+    bestTime: {
+      title: "Melhor época para visitar",
+      periods: [
+        {
+          season: "Alta temporada",
+          months: "Julho a Setembro",
+          description: "Lagoas cheias e clima agradável"
+        },
+        {
+          season: "Baixa temporada",
+          months: "Outubro a Junho",
+          description: "Menos visitantes, preços melhores"
+        }
+      ]
+    },
+    tours: [
+      {
+        id: 'pequenos-lencois-tour',
+        name: 'Tour Pequenos Lençóis',
+        description: 'Conheça as belezas dos Pequenos Lençóis em um passeio exclusivo.',
+        image: '/pequenos-lencois.jpg',
+        duration: '5 horas',
+        includes: [
+          'Transporte 4x4',
+          'Guia local',
+          'Água mineral',
+          'Paradas para fotos e banho'
+        ],
+        price: 'A partir de R$ 160'
+      }
+    ]
+  },
+  'cardosa': {
+    title: "Povoado Cardosa",
+    description: `O Povoado Cardosa é uma comunidade tradicional que preserva a autenticidade da cultura maranhense. 
+    Localizado às margens do Rio Preguiças, o povoado oferece uma experiência única de contato com o modo de vida local, 
+    além de ser um ponto estratégico para explorar as belezas naturais da região.`,
+    highlights: [
+      "Cultura local preservada",
+      "Artesanato tradicional",
+      "Gastronomia típica",
+      "Passeios de barco",
+      "Contato com a comunidade local"
+    ],
+    images: [
+      {
+        url: "/cardosa/cardosa1.jpeg",
+        caption: "Vista do Rio Preguiças"
+      },
+      {
+        url: "/cardosa/cardosa2.jpeg",
+        caption: "Comunidade local"
+      },
+      {
+        url: "/cardosa/cardosa3.jpeg",
+        caption: "Artesanato local"
+      }
+    ],
+    bestTime: {
+      title: "Melhor época para visitar",
+      periods: [
+        {
+          season: "Alta temporada",
+          months: "Julho a Setembro",
+          description: "Clima ideal para passeios"
+        },
+        {
+          season: "Baixa temporada",
+          months: "Outubro a Junho",
+          description: "Experiência mais autêntica"
+        }
+      ]
+    },
+    tours: [
+      {
+        id: 'cardosa-cultural',
+        name: 'Experiência Cultural Cardosa',
+        description: 'Imersão na cultura local com visita às famílias tradicionais.',
+        image: '/cardosa.webp',
+        duration: '4 horas',
+        includes: [
+          'Guia local',
+          'Degustação de comidas típicas',
+          'Demonstração de artesanato',
+          'Passeio pela comunidade'
+        ],
+        price: 'A partir de R$ 120'
       }
     ]
   }
 };
 
-const tours = [
-  {
-    id: 'lagoa-azul',
-    name: 'Lagoa Azul',
-    description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
-    image: '/lencois-maranhenses.jpg',
-    duration: '8 horas',
-    includes: [
-      'Transfer hotel-parque-hotel',
-      'Guia especializado',
-      'Água mineral',
-      'Seguro viagem'
-    ],
-    price: 'A partir de R$ 150'
-  },
-  {
-    id: 'farol-mandacaru',
-    name: 'Farol Mandacaru',
-    description: 'Visita ao histórico Farol de Mandacaru com vista panorâmica da região.',
-    image: '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
-    duration: '6 horas',
-    includes: [
-      'Transfer hotel-farol-hotel',
-      'Guia especializado',
-      'Água mineral',
-      'Seguro viagem'
-    ],
-    price: 'A partir de R$ 120'
-  },
-  {
-    id: 'passeio-barco',
-    name: 'Passeio de Barco',
-    description: 'Navegue pelo Rio Preguiças com paradas em pontos turísticos.',
-    image: '/BarreirinhasPortal.jpg',
-    duration: '5 horas',
-    includes: [
-      'Barco exclusivo',
-      'Guia especializado',
-      'Água mineral',
-      'Paradas para banho'
-    ],
-    price: 'A partir de R$ 130'
-  },
-  {
-    id: 'passeio-caiaque',
-    name: 'Aventura de Caiaque',
-    description: 'Uma experiência única de caiaque pelas águas cristalinas do Rio Preguiças.',
-    image: '/caiaque6.jpeg',
-    duration: '3 horas',
-    includes: [
-      'Equipamentos completos',
-      'Instrutor especializado',
-      'Água mineral',
-      'Seguro aventura'
-    ],
-    price: 'A partir de R$ 100'
-  }
-];
-
 const RegionDetails = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  console.log(id);
+  
+  const regionInfo = regionsData[id] || regionsData['lencois-maranhenses'];
+  const tours = regionInfo.tours;
 
   const handleTourClick = (tourId) => {
     navigate(`/tour/${tourId}`);
@@ -200,7 +396,7 @@ const RegionDetails = () => {
                       className="btn-reservar"
                       onClick={() => handleReservar(tour.name)}
                     >
-                      <i className="fab fa-whatsapp"></i> Reservar
+                      Reservar
                     </button>
                   </div>
                 </div>

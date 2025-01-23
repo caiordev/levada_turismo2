@@ -267,6 +267,24 @@ const Modal = styled.div`
   }
 `;
 
+const VideoSection = styled.div`
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+
+  iframe {
+    border-radius: 15px;
+  }
+`;
+
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -358,6 +376,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'lagoa-bonita': {
@@ -375,8 +423,39 @@ const tourData = {
       '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
       '/BarreirinhasPortal.jpg',
       '/caiaque6.jpeg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
+
   'lagoa-azul-bonito': {
     name: 'Lagoa Azul + Lagoa Bonita',
     rating: 5.0,
@@ -393,6 +472,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'atins': {
@@ -411,6 +520,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'vassouras-mandacaru-caburé': {
@@ -429,6 +568,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'pequenos-lencois': {
@@ -447,6 +616,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'cardosa': {
@@ -465,6 +664,36 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   'passeio-caiaque': {
@@ -483,6 +712,37 @@ const tourData = {
       '/lencois-maranhenses.jpg',
       '/lencois-maranhenses-hurb-2839.jpeg',
       '/parque-nacional-dos-lencois.jpg'
+    ],
+    videoUrl: 'https://youtube.com/shorts/XKfCEsUyISQ?feature=share',
+    itinerary: [
+      {
+        time: '07:30',
+        activity: 'Saída do hotel em veículo 4x4'
+      },
+      {
+        time: '08:30',
+        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+      },
+      {
+        time: '09:00',
+        activity: 'Início da caminhada pelas dunas'
+      },
+      {
+        time: '09:30',
+        activity: 'Chegada na Lagoa Azul'
+      },
+      {
+        time: '11:30',
+        activity: 'Tempo livre para banho e fotos'
+      },
+      {
+        time: '12:30',
+        activity: 'Início do retorno'
+      },
+      {
+        time: '13:30',
+        activity: 'Chegada ao hotel'
+      }
     ]
   },
   
@@ -529,24 +789,29 @@ const TourDetails = () => {
         </Description>
       </InfoSection>
 
+      {tour.videoUrl && (
+        <VideoSection>
+          <h2>Vídeo do Passeio</h2>
+          <iframe
+            width="100%"
+            height="400"
+            src={tour.videoUrl.replace('shorts/', 'embed/').replace('?feature=share', '')}
+            title={`Vídeo do passeio ${tour.name}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </VideoSection>
+      )}
+
       <Timeline>
         <h2>Roteiro do Passeio</h2>
-        <TimelineItem>
-          <TimelineTime>08:00</TimelineTime>
-          <TimelineContent>Saída do hotel em veículo 4x4</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineTime>09:00</TimelineTime>
-          <TimelineContent>Chegada na {tour.name}</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineTime>11:00</TimelineTime>
-          <TimelineContent>Tempo livre para banho e fotos</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineTime>12:00</TimelineTime>
-          <TimelineContent>Retorno ao hotel</TimelineContent>
-        </TimelineItem>
+        {tour.itinerary.map((item, index) => (
+          <TimelineItem key={index}>
+            <TimelineTime>{item.time}</TimelineTime>
+            <TimelineContent>{item.activity}</TimelineContent>
+          </TimelineItem>
+        ))}
       </Timeline>
 
       <InfoCards>
