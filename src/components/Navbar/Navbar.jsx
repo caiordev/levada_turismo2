@@ -30,6 +30,7 @@ const Logo = styled(Link)`
     height: 100px;
     width: 200px;
     transition: all 0.3s ease;
+    cursor: pointer;
 
     @media (max-width: 768px) {
       width: 200px;
@@ -119,6 +120,13 @@ const MenuButton = styled.button`
   }
 `;
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -186,7 +194,7 @@ const Navbar = () => {
   return (
     <Nav scrolled={scrolled}>
       <NavContainer>
-        <Logo to="/">
+        <Logo to="/" onClick={scrollToTop}>
           <img src="/logo-removebg-preview.png" alt="Levada Turismo" />
         </Logo>
         <MenuButton

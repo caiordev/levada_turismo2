@@ -18,6 +18,7 @@ import TravelPackages from './components/TravelPackages/TravelPackages'
 import Accommodation from './components/Accommodation/Accommodation'
 import SeasonalInfo from './components/SeasonalInfo/SeasonalInfo'
 import RegionDetails from './components/RegionDetails/RegionDetails'
+import PackageDetails from './components/PackageDetails/PackageDetails'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -53,6 +54,7 @@ const AppContent = () => {
         <Route path="/tour/:id" element={<TourDetails />} />
         <Route path="/place/:id" element={<PlaceDetails />} />
         <Route path="/region/:id" element={<RegionDetails />} />
+        <Route path="/package/:id" element={<PackageDetails />} />
         <Route path="/" element={
           <>
             <Home />

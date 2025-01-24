@@ -113,7 +113,37 @@
   background-color: #128c7e;
 }
 
+.btn-detalhes {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #2196f3;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-detalhes:hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
+  .btn-detalhes {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-reservar {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    justify-content: center;
+    text-align: center;
+  }
+
   .travel-packages {
     padding: 1rem;
     background-color: #f9f9f9;

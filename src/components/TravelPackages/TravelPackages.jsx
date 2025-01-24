@@ -1,11 +1,12 @@
 import React from 'react';
 import './TravelPackages.css';
+import { Link } from 'react-router-dom';
 
 const packages = [
   {
-    id: 'pacote-completo',
-    name: 'Pacote Completo Lençóis',
-    description: 'Experiência completa de 3 dias incluindo Lagoa Azul, Farol Mandacaru e passeio de barco.',
+    id: 'rota-das-emocoes',
+    name: 'Rota das Emoções',
+    description: 'Experiência completa de 5 dias incluindo São Luís, Barreirinhas, Lagoa Azul, Atins e muito mais.',
     image: '/lencois-maranhenses.jpg',
     rating: 5.0,
     highlights: [
@@ -16,8 +17,8 @@ const packages = [
     ]
   },
   {
-    id: 'pacote-aventura',
-    name: 'Aventura Total',
+    id: 'sao-luis-santo-amaro-barreirinhas',
+    name: 'Pacote Aventura',
     description: 'Pacote de 2 dias com foco em atividades de aventura, incluindo caiaque e trilhas.',
     image: '/caiaque6.jpeg',
     rating: 5.0,
@@ -29,8 +30,21 @@ const packages = [
     ]
   },
   {
-    id: 'pacote-romantico',
-    name: 'Escapada Romântica',
+    id: 'sao-luis-barreirinhas-atins',
+    name: 'Pacote Romântico',
+    description: 'Pacote especial para casais com passeios privativos e momentos únicos.',
+    image: '/BarreirinhasPortal.jpg',
+    rating: 5.0,
+    highlights: [
+      'Passeios privativos',
+      'Jantar romântico',
+      'Hospedagem premium',
+      'Transfer exclusivo'
+    ]
+  },
+  {
+    id: 'sao-luis-barreirinhas-lencois-maranhenses',
+    name: 'Pacote Romântico',
     description: 'Pacote especial para casais com passeios privativos e momentos únicos.',
     image: '/BarreirinhasPortal.jpg',
     rating: 5.0,
@@ -70,6 +84,12 @@ const TravelPackages = () => {
                   ))}
                 </ul>
                 <div className="package-buttons">
+                  <Link 
+                    to={`/package/${pkg.id}`}
+                    className="btn-detalhes"
+                  >
+                    Ver Detalhes
+                  </Link>
                   <button 
                     className="btn-reservar"
                     onClick={() => handleReservar(pkg.name)}
