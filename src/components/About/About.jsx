@@ -40,12 +40,10 @@ const ImageWrapper = styled.div`
     transform: scale(1.05);
   }
 
-  @media (max-width: 768px) {
-    width: 320px;
-    height: 200px;
-    aspect-ratio: 16/9;
-     margin-top: 0rem; /* Ajuste a margem no celular */
-  }
+   @media (max-width: 768px) {
+
+     margin-top: 0rem;
+   }
 `;
 
 const Content = styled.div`

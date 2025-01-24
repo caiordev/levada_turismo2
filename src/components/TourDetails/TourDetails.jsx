@@ -863,6 +863,13 @@ const TourDetails = () => {
     setTouchEnd(0);
   };
 
+  const handleReservar = (tourName) => {
+    const phoneNumber = "5598991333370";
+    const message = `Olá! Gostaria de mais informações sobre o passeio: ${tourName}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   if (!tour) return <div>Tour não encontrado</div>;
 
   return (
@@ -961,7 +968,7 @@ const TourDetails = () => {
       )}
 
       <ButtonContainer>
-        <Button>
+        <Button onClick={() => handleReservar(tour.name)}>
           <i className="fab fa-whatsapp"></i>
           Reservar este passeio
         </Button>

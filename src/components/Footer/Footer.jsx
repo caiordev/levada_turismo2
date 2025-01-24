@@ -126,7 +126,7 @@ const Footer = () => {
             <SocialIcon href="#" target="_blank">
               <FontAwesomeIcon icon={faInstagram} />
             </SocialIcon>
-            <SocialIcon href="https://wa.me/5598999999999" target="_blank">
+            <SocialIcon href="https://wa.me/5598991333370" target="_blank">
               <FontAwesomeIcon icon={faWhatsapp} />
             </SocialIcon>
           </SocialLinks>

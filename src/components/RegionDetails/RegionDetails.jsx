@@ -318,7 +318,7 @@ const RegionDetails = () => {
   };
 
   const handleReservar = (tourName) => {
-    const phoneNumber = "5598981876833";
+    const phoneNumber = "5598991333370";
     const message = `Olá! Gostaria de mais informações sobre o passeio: ${tourName}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

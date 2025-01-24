@@ -58,7 +58,7 @@ const Tooltip = styled.span`
 
 const WhatsAppFloat = () => {
   return (
-    <WhatsAppButton href="https://wa.me/5598999999999" target="_blank">
+    <WhatsAppButton href="https://wa.me/5598991333370" target="_blank">
       <FontAwesomeIcon icon={faWhatsapp} />
       <Tooltip className="tooltip">Fale conosco!</Tooltip>
     </WhatsAppButton>

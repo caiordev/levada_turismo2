@@ -45,7 +45,7 @@ const packages = [
 
 const TravelPackages = () => {
   const handleReservar = (packageName) => {
-    const phoneNumber = "5598981876833";
+    const phoneNumber = "5598991333370";
     const message = `Olá! Gostaria de mais informações sobre o pacote: ${packageName}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
