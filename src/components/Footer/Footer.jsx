@@ -60,7 +60,6 @@ const FooterSection = styled.div`
 const SocialLinks = styled.div`
   display: flex;
   gap: 15px;
-  margin-top: 20px;
 `;
 
 const SocialIcon = styled.a`
@@ -114,11 +113,6 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <h3>Sobre Nós</h3>
-          <p>
-            Somos uma agência especializada em turismo nos Lençóis Maranhenses, 
-            oferecendo experiências únicas e inesquecíveis para nossos clientes.
-          </p>
           <SocialLinks>
             <SocialIcon href="#" target="_blank">
               <FontAwesomeIcon icon={faFacebookF} />
@@ -130,33 +124,6 @@ const Footer = () => {
               <FontAwesomeIcon icon={faWhatsapp} />
             </SocialIcon>
           </SocialLinks>
-        </FooterSection>
-
-        <FooterSection>
-          <h3>Links Rápidos</h3>
-          <QuickLinks>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#places">Lugares</a></li>
-            <li><a href="#packages">Pacotes</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </QuickLinks>
-        </FooterSection>
-
-        <FooterSection>
-          <h3>Contato</h3>
-          <p>
-            <FontAwesomeIcon icon={faMapMarkerAlt} />
-            Av. Beira Rio, 123 - Centro, Barreirinhas - MA
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faPhone} />
-            (98) 99999-9999
-          </p>
-          <p>
-            <FontAwesomeIcon icon={faEnvelope} />
-            contato@lencoisturismo.com
-          </p>
         </FooterSection>
 
         <FooterSection>
