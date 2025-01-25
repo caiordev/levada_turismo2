@@ -161,9 +161,10 @@ const DayContent = styled.div`
 
   h2 {
     color: #1a237e;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     font-weight: 600;
+    text-align: left; 
   }
 
   p {

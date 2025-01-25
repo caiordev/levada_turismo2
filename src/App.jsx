@@ -62,11 +62,11 @@ const AppContent = () => {
             <OurTours />
             <TravelPackages />
             <Accommodation />
-            <SeasonalInfo />
             <Transfer />
+            <SeasonalInfo />
+            <Contact />
             <Reviews />
             <FAQ />
-            <Contact />
           </>
         } />
       </Routes>

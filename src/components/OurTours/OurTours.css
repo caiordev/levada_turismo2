@@ -1,5 +1,5 @@
 .our-tours {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background-color: #f9f9f9;
 }
 
@@ -8,6 +8,7 @@
   margin-bottom: 2rem;
   color: #333;
   font-size: 2.3rem;
+  position: relative;
 }
 
 .our-tours h2::after {
