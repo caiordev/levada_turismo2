@@ -61,9 +61,9 @@ const AppContent = () => {
             <About />
             <OurTours />
             <TravelPackages />
+            <Transfer />
             <Accommodation />
             <SeasonalInfo />
-            <Transfer />
             <Reviews />
             <FAQ />
             <Contact />

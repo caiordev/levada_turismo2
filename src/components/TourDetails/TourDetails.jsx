@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const DetailsContainer = styled.div`
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   background-color: #ffffff;
@@ -61,11 +60,13 @@ const ImageGallery = styled.div`
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
-  margin: 2rem 0;
+  margin: 2rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
 
   .gallery-container {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease-in-out;
   }
 
@@ -74,6 +75,15 @@ const ImageGallery = styled.div`
     flex-shrink: 0;
     object-fit: cover;
     aspect-ratio: 16/9;
+    max-height: 600px;
+
+    @media (min-width: 1024px) {
+      max-height: 450px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 
@@ -159,6 +169,7 @@ const Description = styled.div`
     color: #666;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+    text-align: justify;
   }
 `;
 

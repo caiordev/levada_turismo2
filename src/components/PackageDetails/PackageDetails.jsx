@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -113,12 +113,11 @@ const DaySection = styled.div`
 
     .day-content {
       text-align: right;
-      padding-left: 0;
       padding-right: 50px;
 
       @media (max-width: 768px) {
         text-align: left;
-        padding-right: 0;
+        padding-right: 30px;
         padding-left: 20px;
       }
     }
@@ -162,7 +161,7 @@ const DayContent = styled.div`
 
   h2 {
     color: #1a237e;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
     font-weight: 600;
   }
@@ -172,6 +171,7 @@ const DayContent = styled.div`
     line-height: 1.8;
     font-size: 1.1rem;
     margin: 0;
+    text-align: justify;
   }
 `;
 
@@ -188,20 +188,20 @@ const packageData = {
     ],
     days: [
       {
-        day: '1º Dia - SÃO LUÍS',
-        description: 'Chegada ao Aeroporto de São Luís. Recepção e traslado ao hotel.'
+        day: '1º Dia: SÃO LUÍS',
+        description: 'Chegada ao Aeroporto de São Luís. Recepção e translado ao hotel.'
       },
       {
-        day: '2° Dia - SÃO LUÍS /BARREIRINHAS',
-        description: 'Traslado rumo a Barreirinhas. Chegada e acomodação, tarde livre para aproveita a cidade.'
+        day: '2° Dia: SÃO LUÍS - BARREIRINHAS',
+        description: 'Translado rumo à Barreirinhas. Chegada e acomodação, tarde livre para aproveita a cidade.'
       },
       {
-        day: '3º Dia - CIRCUITO LAGOAS AZUL E BONITA',
-        description: 'Após o café da manhã, sairemos em veículo 4x4 em direção ao Parque Nacional. Nossa aventura começa percorrendo estradas de areia até chegarmos ao circuito da Lagoa Azul. A partir dela caminhamos pelas dunas, passando por outras várias lagoas (na época da cheia). Seguimos o roteiro em direção à Lagoa Bonita, parando antes em um restaurante local para almoçar. Após um breve descanso partimos para a Lagoa Bonita, local onde temos a sensação de estar em meio ao grande deserto. Deserto este muito especial, cheio de lagoas. Após deliciosos banhos e um gostoso entardecer, retornamos para Barreirinhas.'
+        day: '3º Dia: CIRCUITO LAGOAS AZUL E BONITA',
+        description: 'Após o café da manhã, sairemos em veículo 4x4 em direção ao Parque Nacional. Nossa aventura começa percorrendo estradas de areia até chegarmos ao circuito da Lagoa Azul. A partir dela caminharemoss pelas dunas, passando por outras várias lagoas (na época da cheia). Seguimos o roteiro em direção à Lagoa Bonita, parando antes em um restaurante local para almoçar. Após um breve descanso partimos para a Lagoa Bonita, local onde temos a sensação de estar em meio ao grande deserto. Deserto este muito especial, cheio de lagoas. Após deliciosos banhos e um gostoso entardecer, retornamos para Barreirinhas.'
       },
       {
-        day: '4° Dia - BARREIRINHAS // VASSOURAS // MANDACARU // CABURÉ // REVOADA // ATINS',
-        description: 'Após o café da manhã, sairemos em voadeira Rio Preguiças abaixo em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminhamos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé. É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças. A sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar. Seguiremos em direção a Atins, onde vamos nos hospedar essa noite. Antes, porém, não podemos perder o espetáculo da revoada das garças, e com sorte, também dos guarás, que no final da tarde voltam ao seu dormitório, para mais uma noite de sono.'
+        day: '4° Dia: BARREIRINHAS - VASSOURAS - MANDACARU - CABURÉ - REVOADA - ATINS',
+        description: 'Após o café da manhã, sairemos de voadeira no Rio Preguiças em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminharemos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé. É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças. A sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar. Seguiremos em direção a Atins, onde vamos nos hospedar essa noite. Antes, porém, não podemos perder o espetáculo da revoada das garças, e com sorte, também dos guarás, que no final da tarde voltam ao seu dormitório, para mais uma noite de sono.'
       },
       {
         day: '5° Dia – ATINS – PARQUE NACIONAL - CANTO DO ATINS - PONTA DO MANGUE',
@@ -257,7 +257,7 @@ const packageData = {
       },
       {
         day: '5° Dia – BARREIRINHAS // VASSOURAS // MANDACARU // CABURÉ /ATINS// BARREIRINHAS',
-        description: 'Após o café da manhã, sairemos em voadeira Rio Preguiças abaixo em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminhamos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé.  É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças a sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar de lancha voadeira mais alguns minutos chegaremos na praia de Atins onde o rio preguiças desagua no mar com opção para banho, Retorno para Barreirinhas.'
+        description: 'Após o café da manhã, sairemos em voadeira Rio Preguiças abaixo em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminhamos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé.  É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças a sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar. Seguiremos em direção a Atins, onde vamos nos hospedar essa noite. Antes, porém, não podemos perder o espetáculo da revoada das garças, e com sorte, também dos guarás, que no final da tarde voltam ao seu dormitório, para mais uma noite de sono.'
       }
       ,
       {
@@ -358,6 +358,10 @@ const packageData = {
 const PackageDetails = () => {
   const { id } = useParams();
   const packageInfo = packageData[id];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!packageInfo) {
     return <div>Pacote não encontrado</div>;
