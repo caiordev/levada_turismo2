@@ -113,7 +113,7 @@ const DaySection = styled.div`
 
     .day-content {
       text-align: right;
-      padding-right: 50px;
+      padding-right: 30px;
 
       @media (max-width: 768px) {
         text-align: left;
@@ -161,10 +161,10 @@ const DayContent = styled.div`
 
   h2 {
     color: #1a237e;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     font-weight: 600;
-    text-align: left; 
+    text-align: left;
   }
 
   p {
@@ -356,6 +356,14 @@ const packageData = {
   }
 };
 
+const formatDescription = (description) => {
+  return description
+    .replace(/(\d{1,2}h\d{0,2})/g, '<span class="time">$1</span>')
+    .replace(/([A-Z][A-ZÀ-Ú\s]{2,})/g, '<span class="location">$1</span>')
+    .split('. ')
+    .join('.\n\n');
+};
+
 const PackageDetails = () => {
   const { id } = useParams();
   const packageInfo = packageData[id];
@@ -389,7 +397,7 @@ const PackageDetails = () => {
             <DaySection key={index}>
               <DayContent className="day-content">
                 <h2>{day.day}</h2>
-                <p>{day.description}</p>
+                <p dangerouslySetInnerHTML={{ __html: formatDescription(day.description) }} />
               </DayContent>
             </DaySection>
           ))}

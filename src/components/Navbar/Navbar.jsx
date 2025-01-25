@@ -54,7 +54,8 @@ const NavLinks = styled.ul`
     gap: 0;
     padding: 0;
     max-height: ${props => props.isOpen ? '300px' : '0'};
-    overflow: hidden;
+    overflow-y: ${props => props.isOpen ? 'auto' : 'hidden'}; /* Adiciona scroll apenas quando o menu está aberto */
+    overflow-x: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
