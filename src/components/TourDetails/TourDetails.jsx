@@ -837,6 +837,10 @@ const TourDetails = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % tour.gallery.length);
   };
