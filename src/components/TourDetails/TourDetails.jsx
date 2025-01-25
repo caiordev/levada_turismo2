@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -830,6 +830,10 @@ const TourDetails = () => {
   const { id } = useParams();
   const tour = tourData[id];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Hide indicator after first scroll
   const handleScroll = (e) => {
     if (e.target.scrollLeft > 0) {
@@ -837,10 +841,6 @@ const TourDetails = () => {
     }
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % tour.gallery.length);
   };
