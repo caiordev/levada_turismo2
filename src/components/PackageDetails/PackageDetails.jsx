@@ -188,8 +188,8 @@ const packageData = {
     ],
     days: [
       {
-        day: '1º Dia: SÃO LUÍS',
-        description: 'Chegada ao Aeroporto de São Luís. Recepção e translado ao hotel.'
+        day: '1º Dia - SÃO LUÍS',
+        description: 'Chegada ao Aeroporto de São Luís. Recepção e traslado ao hotel.'
       },
       {
         day: '2° Dia: SÃO LUÍS - BARREIRINHAS',
