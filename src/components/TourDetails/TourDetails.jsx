@@ -78,7 +78,7 @@ const ImageGallery = styled.div`
     max-height: 600px;
 
     @media (min-width: 1024px) {
-      max-height: 450px;
+      max-height: 550px;
     }
   }
 
@@ -493,9 +493,9 @@ const tourData = {
       recommendations: ['Protetor solar', 'Chapéu/boné', 'Câmera']
     },
     gallery: [
-      '/barreirinhas-ma-passeio-de-barco-farol-mandacaru-2.webp',
-      '/BarreirinhasPortal.jpg',
-      '/caiaque6.jpeg'
+      '/lagoa-bonita/lagoabonita2.png',
+      '/lagoa-bonita/lagoabonita4.webp',
+      '/lagoa-bonita/lagoabonita1.webp'
     ],
     itinerary: [
       {
@@ -677,7 +677,7 @@ const tourData = {
     name: 'Pequenos Lençóis',
     rating: 5.0,
     mainImage: '/pequenos-lencois.jpg',
-    description: 'passeio de Quadriciclo, saída as 09:00hs.destino para os pequenos lençóis,Parque eólico, você vai pilotar o quadriciclo, cruzando as dunas dos pequenos lençóis. Parada nas lagoas de água doce aonde se pode mergulhar a vontade na lagoa do Alazão,Caités, próxima parada praia do caburé parada para o almoço e banho na praia, estamos de volta as 16hs:3',
+    description: 'passeio de Quadriciclo, saída as 09:00hs. Destino para os pequenos lençóis, Parque eólico, lá você vai pilotar o quadriciclo, cruzando as dunas dos pequenos lençóis. Parada nas lagoas de água doce aonde se pode mergulhar a vontade na lagoa do Alazão, Caités, próxima parada praia do caburé parada para o almoço e banho na praia, estamos de volta as 16hs.',
     details: {
       duration: '4 horas',
       difficulty: 'Moderada',
@@ -685,10 +685,8 @@ const tourData = {
       recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
     },
     gallery: [
-      '/Lencois-1.jpg',
-      '/lencois-maranhenses.jpg',
-      '/lencois-maranhenses-hurb-2839.jpeg',
-      '/parque-nacional-dos-lencois.jpg'
+      '/pequenos-lencois/foto1.jpeg',
+      '/pequenos-lencois/foto2.jpeg'
     ],
     itinerary: [
       {
@@ -725,7 +723,7 @@ const tourData = {
     name: 'Cardosa',
     rating: 5.0,
     mainImage: '/cardosa.webp',
-    description: 'Partiremos de Barreirinhas em um veículo 4x4 em direção ao povoado de Cardosa, em uma viagem de aproximadamente 1 hora. Ao chegar, encontraremos o Rio Formiga, um rio de águas cristalinas e temperatura muito agradável. Lá, faremos uma descida em boias infláveis durante 1 hora, acompanhados de guias locais.',
+    description: 'Partiremos de Barreirinhas em um veículo 4x4 em direção ao povoado de Cardosa, o primeiro trecho é via asfalto por 10km e depois por uma estrada carroçal(piçarra) em uma viagem de aproximadamente 1 hora. Ao chegar, encontraremos o Rio Formiga, um rio de águas cristalinas com correntes calmas e temperatura muito agradável. Lá, faremos uma descida em boias infláveis durante 1 hora para uma conteplação da natureza, acompanhados de guias locais.',
     details: {
       duration: '4 horas',
       difficulty: 'Moderada',

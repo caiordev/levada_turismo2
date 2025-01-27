@@ -181,7 +181,9 @@ const packageData = {
     title: 'ROTA DAS EMOÇÕES',
     highlights: [
       { icon: faMapMarkerAlt, text: 'Barreirinhas' },
-      { icon: faClock, text: '5 dias de aventura' },
+      { icon: faMapMarkerAlt, text: 'Camocim' },
+      { icon: faMapMarkerAlt, text: 'Jericoacara' },
+      { icon: faClock, text: '9 dias de aventura' },
       { icon: faSun, text: 'Clima tropical o ano todo' },
       { icon: faUmbrellaBeach, text: 'Praias paradisíacas' },
       { icon: faMountain, text: 'Dunas dos Lençóis Maranhenses' },
@@ -189,7 +191,7 @@ const packageData = {
     ],
     days: [
       {
-        day: '1º Dia - SÃO LUÍS',
+        day: '1º Dia: SÃO LUÍS',
         description: 'Chegada ao Aeroporto de São Luís. Recepção e traslado ao hotel.'
       },
       {
@@ -205,26 +207,26 @@ const packageData = {
         description: 'Após o café da manhã, sairemos de voadeira no Rio Preguiças em direção ao povoado do Atins. No caminho, paramos em Vassouras, Pequenos Lençóis, Área de Proteção Ambiental. Caminharemos pelas dunas, tomamos banho nas lagoas (na época da cheia) e podemos ainda saborear uma água de coco em uma barraquinha beira rio. Poderemos ainda ver os macacos prego que habitam o mangue do entorno. Continuamos navegando e em alguns minutos estamos no Caburé. É aqui que os pescadores passam o primeiro semestre do ano, quando as condições climáticas favorecem a pesca. Oportunidade de banho de mar. Em seguida cruzaremos o rio até o Mandacaru, um povoado de uma centena de casas que se originou a partir do Farol do Preguiças. A sugestão é subir o farol e apreciar a vista do alto, podendo-se ver até o Parque Nacional e o mar. Seguiremos em direção a Atins, onde vamos nos hospedar essa noite. Antes, porém, não podemos perder o espetáculo da revoada das garças, e com sorte, também dos guarás, que no final da tarde voltam ao seu dormitório, para mais uma noite de sono.'
       },
       {
-        day: '5° Dia – ATINS – PARQUE NACIONAL - CANTO DO ATINS - PONTA DO MANGUE',
+        day: '5° Dia: ATINS – PARQUE NACIONAL - CANTO DO ATINS - PONTA DO MANGUE',
         description: 'Após o café da manhã, sairemos em 4x4 até o Parque Nacional dos Lençóis Maranhenses, desta vez mais próximos ao mar. Passamos incialmente pela Praia de Atins, e de lá seguimos ao início das dunas do Parque Nacional. Paramos o veículo, e sobre uma das inúmeras dunas teremos uma linda vista do parque, se estendendo até o Canto do Atins e o mar. Seguimos então à Praia dos Lençóis, onde as dunas se aproximam do mar. Aqui podemos tomar um banho de mar. Na época das chuvas, veremos uma pequena cachoeira que se forma junto ao mar. Seguimos então para as lagoas do Gavião, do Kite, e outras lagoas mais, que nos permitem escolher em qual delas iremos querer desfrutar de deliciosos banhos. Agora já é hora de recompor as energias através de um delicioso almoço no Canto do Atins. Luzia ou Antonio, em qual das duas barracas iremos comer aquele camarão fresco ou o peixe pescado há pouco? Difícil escolha.... À tarde, lembrando que estamos no nordeste, onde o dia é sempre quente, seguimos à Lagoa Tropical e da Esmeralda, na Ponta do Mangue, para mais alguns mergulhos deliciosos. No final do dia voltamos ao nosso hotel.'
       }
       ,
       {
-        day: '6° Dia – ATINS – TUTOIA - DELTA DO PARNAÍBA - DELTA',
+        day: '6° Dia: ATINS – TUTOIA - DELTA DO PARNAÍBA - DELTA',
         description: 'Após o café da manhã (de acordo com a maré), cruzaremos de lancha voadeira, por 10 minutos, o rio Preguiças até o Caburé, de onde partiremos em veículo 4x4 até Tutoia. O trajeto para lá será pela praia até Paulino Neves e depois via asfalto. Lá chegando, embarcaremos em lancha voadeira em um dos afluentes do Rio Parnaíba, para atravessarmos o mesmo até o Porto dos Tatus, percorrendo 4 dos 5 braços deste impressionante delta. Partiremos do Porto de Tutoia, e nosso trajeto, passará por várias ilhas, entre elas a Ilha do Cajueiro, a Ilha dos Três Bocas, a Ilha do Caju, a Ilha do Torto e a Ilha das Canárias. Faremos nosso almoço no Morro do Meio, um singelo povoado típico dos ribeirinhas que habitam as margens do Delta do Parnaíba. No final da tarde iremos à Ilha dos Pássaros, local onde iremos assistir um espetáculo da natureza que é a Revoada dos Guarás.  Em seguida navegaremos mais 45 minutos, ao Porto dos Tatus. Aqui desembarcamos da lancha voadeira e seguiremos por mais 20 minutos de carro até a cidade de Parnaíba. Após nos alojarmos em nossa pousada, podemos dar uma volta pelo centro histórico, no Porto das Barcas, e visitar algumas lojas de artesanato e jantar. '
       }
       ,
       {
-        day: '7° Dia – PARNAÍBA  – CAMOCIM  - TATAJUBA  - JERICOACOARA',
+        day: '7° Dia: PARNAÍBA  – CAMOCIM  - TATAJUBA  - JERICOACOARA',
         description: 'Após café da manhã, traslado a Camocim. Após a travessia de barco pelo Rio Coreaú, iniciaremos o traslado que na verdade é um grande passeio. A paisagem é composta por praias desertas e lindas dunas que chegam a até 30 metros de altura. Faremos um pausa em Tatajuba para curtir a bela Lagoa Verde. Após relaxarmos nas redes penduradas sobre a lagoa, poderemos almoçar neste delicioso recanto. Tatajuba é um primitivo vilarejo de pescadores que foi encoberto pela ação das dunas e reconstruído pelos seus habitantes na outra margem do rio. É por isso que alguns a consideram como Nova Tatajuba. Possui dunas enormes, algumas em processo de cristalização, o que as impede de se mover pela ação do vento. Chegaremos a Jeri à tarde e nos hospedaremos. '
       }
       ,
       {
-        day: '8° Dia – JERICOACOARA  – LAGOAS AZUL E DO PARAÍSO - PEDRA FURADA',
+        day: '8° Dia: JERICOACOARA  – LAGOAS AZUL E DO PARAÍSO - PEDRA FURADA',
         description: 'Neste dia, sairemos à pé e caminharemos pela praia até a Pedra Furada, junto ao mar. Símbolo da vila, o local compreende lindas formações rochosas em meio às ondas do mar. Curtiremos o local e voltaremos a Jeri, logo em seguida, faremos um passeio de buggy às Lagoas Azul - ainda virgem, imensa e de águas impressionantemente azuis - e do Paraíso, que possui algumas charmosas pousadas ao redor. Caminharemos por suas areias e poderemos nadar em suas gostosas águas. A região é conhecida também pela culinária, pois os restaurantes, apesar de simples, oferecem pratos de peixes e camarão frescos, pescados no mesmo dia, a preços atraentes. No meio da tarde retornaremos a Jeri cruzando as dunas, uma sensação maravilhosa. Chegaremos a tempo de assistir o pôr-do-sol do alto da duna principal da vila, para onde todos se dirigem. '
       },
       {
-        day: '9° Dia – JERICOACOARA  – FORTALEZA, JERICOACOARA AO AEROPORTO DE CRUZ',
+        day: '9° Dia: JERICOACOARA  – FORTALEZA, JERICOACOARA AO AEROPORTO DE CRUZ',
         description: 'Após o café da manhã, traslado para o Aeroporto de Fortaleza para embarque.'
       }
     ]

@@ -6,12 +6,10 @@ const packages = [
   {
     id: 'rota-das-emocoes',
     name: 'Rota das Emoções',
-    description: 'Experiência completa de 5 dias incluindo São Luís, Barreirinhas, Lagoa Azul, Atins e muito mais.',
+    description: 'Experiência completa de 9 dias incluindo São Luís, Barreirinhas, Lagoa Azul, Atins, Parnaiba, Jericoacara, Camocim e muito mais.',
     image: '/lencois-maranhenses.jpg',
     rating: 5.0,
     highlights: [
-      'Hospedagem inclusa',
-      'Café da manhã',
       'Transporte local',
       'Guia especializado'
     ]
@@ -19,39 +17,34 @@ const packages = [
   {
     id: 'sao-luis-santo-amaro-barreirinhas',
     name: 'Pacote Aventura',
-    description: 'Pacote de 2 dias com foco em atividades de aventura, incluindo caiaque e trilhas.',
-    image: '/caiaque6.jpeg',
+    description: 'Pacote de 7 dias com aventuras em Santo Amaro, Barreirinhas e São Luís.',
+    image: '/lagoa-azul/lagoa-azul.jpeg',
     rating: 5.0,
     highlights: [
       'Equipamentos inclusos',
       'Instrutor profissional',
-      'Transporte local',
-      'Lanche incluso'
+      'Transporte local'
     ]
   },
   {
     id: 'sao-luis-barreirinhas-atins',
-    name: 'Pacote Romântico',
-    description: 'Pacote especial para casais com passeios privativos e momentos únicos.',
+    name: 'São Luís + Barreirinhas + Atins',
+    description: 'Pacote de 7 dias com aventuras em Atins, Barreirinhas e São Luís.',
     image: '/BarreirinhasPortal.jpg',
     rating: 5.0,
     highlights: [
       'Passeios privativos',
-      'Jantar romântico',
-      'Hospedagem premium',
       'Transfer exclusivo'
     ]
   },
   {
     id: 'sao-luis-barreirinhas-lencois-maranhenses',
-    name: 'Pacote Romântico',
-    description: 'Pacote especial para casais com passeios privativos e momentos únicos.',
-    image: '/BarreirinhasPortal.jpg',
+    name: 'São Luís + Barreirinhas + Lençóis Maranhenses',
+    description: 'Pacote de 7 dias com aventuras nos Lençóis Maranhenses, Barreirinhas e São Luís.',
+    image: '/atins.webp',
     rating: 5.0,
     highlights: [
       'Passeios privativos',
-      'Jantar romântico',
-      'Hospedagem premium',
       'Transfer exclusivo'
     ]
   }
@@ -94,7 +87,7 @@ const TravelPackages = () => {
                     className="btn-reservar"
                     onClick={() => handleReservar(pkg.name)}
                   >
-                    <i className="fab fa-whatsapp"></i> Solicitar Orçamento
+                    <i className="fab fa-whatsapp"></i> Orçamento
                   </button>
                 </div>
               </div>

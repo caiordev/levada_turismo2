@@ -183,7 +183,7 @@ const slides = [
   },
   {
     id: 'cardosa',
-    image: '/cardosa.webp',
+    image: '/cardosa/cardosa.webp',
     name: 'Povoado Cardosa',
     description: 'Navegue pelas águas tranquilas e conheça a natureza local'
   }

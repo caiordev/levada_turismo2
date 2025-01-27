@@ -56,7 +56,7 @@ const tours = [
     id: 'passeio-caiaque',
     name: 'Aventura de Caiaque',
     description: 'Uma experiência única de caiaque pelas águas cristalinas do Rio Preguiças, explorando a natureza de perto.',
-    image: '/caiaque6.jpeg',
+    image: '/caiaque/caiaque5.jpeg',
     rating: 5.0,
   }
 ];
