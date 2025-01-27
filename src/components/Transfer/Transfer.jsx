@@ -59,6 +59,28 @@ const Title = styled.h2`
   }
 `;
 
+const SliderWrapper = styled.div`
+  flex: 1;
+  width: 50%;
+  position: relative;
+
+  .slick-slider {
+    height: 400px;
+  }
+
+  .slick-list, .slick-track {
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    
+    .slick-slider {
+      height: 250px;
+    }
+  }
+`;
+
 const TransferCard = styled.div`
   background: white;
   border-radius: 15px;
@@ -83,21 +105,16 @@ const TransferCard = styled.div`
   }
 `;
 
-const CardImage = styled.div`
-  flex: 1;
-  min-height: 400px;
-  background-image: url(${props => props.image});
-  background-size: cover;
-  background-position: center;
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
   position: relative;
-  transition: transform 0.3s ease;
 
-  ${TransferCard}:hover & {
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 768px) {
-    min-height: 200px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 `;
 
@@ -247,13 +264,17 @@ const Transfer = () => {
       <Container>
         <Title>{transferInfo.title}</Title>
         <TransferCard>
-          <Slider {...settings}>
-            {transferInfo.images.map((image, index) => (
-              <div key={index}>
-                <CardImage image={image} />
-              </div>
-            ))}
-          </Slider>
+          <SliderWrapper>
+            <Slider {...settings}>
+              {transferInfo.images.map((image, index) => (
+                <div key={index}>
+                  <ImageContainer>
+                    <img src={image} alt={`Transfer ${index + 1}`} />
+                  </ImageContainer>
+                </div>
+              ))}
+            </Slider>
+          </SliderWrapper>
           <CardContent>
             <h3>Transfer Privativo</h3>
             <p>{transferInfo.description}</p>
