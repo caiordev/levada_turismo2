@@ -81,7 +81,7 @@ const TravelPackages = () => {
                     to={`/package/${pkg.id}`}
                     className="btn-detalhes"
                   >
-                    Ver Detalhes
+                    Ver Mais
                   </Link>
                   <button 
                     className="btn-reservar"
