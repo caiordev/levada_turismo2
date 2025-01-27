@@ -53,8 +53,8 @@ const SeasonalInfo = () => {
   return (
     <section className="seasonal-info" id="seasons">
       <div className="seasonal-header">
-        <h2>Épocas do Ano</h2>
-        <p>Descubra a melhor época para sua visita aos Lençóis Maranhenses</p>
+        <h2>Visite os Lençóis Maranhenses o ano todo!</h2>
+        <p>Os Lençóis Maranhenses podem ser visitados o ano todo! conheça todas as suas estações e venha conhecer o paraíso.</p>
       </div>
 
       <div className="seasons-container">
