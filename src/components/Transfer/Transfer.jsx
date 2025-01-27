@@ -1,4 +1,7 @@
 import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import styled from 'styled-components';
 
 const TransferSection = styled.section`
@@ -207,7 +210,10 @@ const Button = styled.button`
 const transferInfo = {
   title: "Transfer",
   description: "Oferecemos serviço de transfer privativo com conforto e segurança. Nossa equipe experiente garante uma viagem tranquila do aeroporto até seu destino.",
-  image: "/carro.png",
+  images: [
+    "/carro/carro.jpeg",
+    "/carro/carro1.jpeg",
+  ],
   features: [
     "Veículos modernos e climatizados",
     "Motoristas profissionais",
@@ -226,12 +232,28 @@ const Transfer = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <TransferSection id="transfer">
       <Container>
         <Title>{transferInfo.title}</Title>
         <TransferCard>
-          <CardImage image={transferInfo.image} />
+          <Slider {...settings}>
+            {transferInfo.images.map((image, index) => (
+              <div key={index}>
+                <CardImage image={image} />
+              </div>
+            ))}
+          </Slider>
           <CardContent>
             <h3>Transfer Privativo</h3>
             <p>{transferInfo.description}</p>
