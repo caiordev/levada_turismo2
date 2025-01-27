@@ -4,7 +4,7 @@ import './SeasonalInfo.css';
 const seasons = [
   {
     id: 'chuvoso',
-    title: 'Época de Chuvas',
+    title: 'Época de Chuva',
     period: 'Janeiro a Junho',
     description: 'Período de formação das lagoas, com chuvas intensas que enchem as dunas de água cristalina.',
     waterLevel: 60,
@@ -54,7 +54,7 @@ const SeasonalInfo = () => {
     <section className="seasonal-info" id="seasons">
       <div className="seasonal-header">
         <h2>Visite os Lençóis Maranhenses o ano todo!</h2>
-        <p>Os Lençóis Maranhenses podem ser visitados o ano todo! conheça todas as suas estações e venha conhecer o paraíso.</p>
+        <p>Com temperaturas médias em torno de 33°C, os Lençóis Maranhenses são um destino incrível em qualquer época do ano! conheça todas as suas estações e venha conhecer o paraíso.</p>
       </div>
 
       <div className="seasons-container">
