@@ -55,7 +55,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem;
+  padding: 2rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4), transparent);
   color: white;
 }
@@ -126,7 +126,7 @@
 
 .btn-detalhes {
   flex: 1;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 25px;
   background-color: #007bff;
@@ -146,7 +146,7 @@
 
 @media (max-width: 768px) {
   .btn-detalhes {
-    padding: 0.6rem 1.3rem;
+    padding: 0.7rem 1.5rem;
     font-size: 0.90rem;
   }
 

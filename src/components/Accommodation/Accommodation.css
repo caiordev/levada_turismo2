@@ -154,6 +154,7 @@
 
   .accommodation-overlay p {
     font-size: 0.9rem;
+    text-align: justify;
   }
 
   .features li {

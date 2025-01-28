@@ -188,8 +188,7 @@ const Navbar = () => {
     { id: 'transfer', label: 'Transfer' },
     { id: 'contact', label: 'Contato' },
     { id: 'reviews', label: 'Avaliações' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Localização' }
+    { id: 'faq', label: 'FAQ' }
   ];
 
   return (

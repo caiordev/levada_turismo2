@@ -29,7 +29,7 @@ const accommodations = [
   {
     id: 'hoteis',
     title: 'Hotéis',
-    description: 'Parceria com os melhores hotéis da região para garantir seu conforto e tranquilidade.',
+    description: 'Parceria com os melhores hotéis da região para garantir seu conforto e tranquilidade. Planeje sua estadia conosco!',
     image: '/hotel.png',
     features: [
       'Serviço de quarto',

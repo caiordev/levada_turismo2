@@ -136,7 +136,6 @@ const CardContent = styled.div`
   p {
     color: #546e7a;
     margin-bottom: 1rem;
-    line-height: 1.5;
     font-size: 1rem;
   }
 
