@@ -71,7 +71,6 @@
 
 .accommodation-overlay p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
   line-height: 1.4;
 }
 
@@ -81,7 +80,6 @@
 }
 
 .features li {
-  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   font-size: 0.9rem;

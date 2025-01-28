@@ -9,7 +9,7 @@ const accommodations = [
     image: '/pousada.png',
     features: [
       'Café da manhã incluso',
-      'Próximo aos principais pontos turísticos',
+      'Próximo aos pontos turísticos',
       'Wi-Fi gratuito',
       'Atendimento personalizado'
     ]
