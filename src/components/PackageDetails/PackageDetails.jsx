@@ -180,8 +180,10 @@ const packageData = {
   'rota-das-emocoes': {
     title: 'ROTA DAS EMOÇÕES',
     highlights: [
+      { icon: faMapMarkerAlt, text: 'São Luís' },
       { icon: faMapMarkerAlt, text: 'Barreirinhas' },
-      { icon: faMapMarkerAlt, text: 'Camocim' },
+      { icon: faMapMarkerAlt, text: 'Atins' },
+      { icon: faMapMarkerAlt, text: 'Parnaíba' },
       { icon: faMapMarkerAlt, text: 'Jericoacara' },
       { icon: faClock, text: '9 dias de aventura' },
       { icon: faSun, text: 'Clima tropical o ano todo' },
@@ -192,7 +194,7 @@ const packageData = {
     days: [
       {
         day: '1º Dia: SÃO LUÍS',
-        description: 'Chegada ao Aeroporto de São Luís. Recepção e traslado ao hotel.'
+        description: 'Chegada ao Aeroporto de São Luís. Recepção e traslado ao hotel.E em horário apropriado um City Tour'
       },
       {
         day: '2° Dia: SÃO LUÍS - BARREIRINHAS',
@@ -234,8 +236,10 @@ const packageData = {
   'sao-luis-santo-amaro-barreirinhas': {
     title: 'SÃO LUIS - SANTO AMARO - BARREIRINHAS',
     highlights: [
-      { icon: faMapMarkerAlt, text: 'São Luís, Santo Amaro, Barreirinhas' },
-      { icon: faClock, text: '5 dias de aventura' },
+      { icon: faMapMarkerAlt, text: 'São Luís' },
+      { icon: faMapMarkerAlt, text: 'Santo Amaro' },
+      { icon: faMapMarkerAlt, text: 'Barreirinhas' },
+      { icon: faClock, text: '7 dias de aventura' },
       { icon: faSun, text: 'Clima tropical o ano todo' },
       { icon: faUmbrellaBeach, text: 'Praias paradisíacas' },
       { icon: faMountain, text: 'Dunas dos Lençóis Maranhenses' },
@@ -277,8 +281,10 @@ const packageData = {
   'sao-luis-barreirinhas-atins': {
     title: 'SÃO LUIS - BARREIRINHAS - ATINS',
     highlights: [
-      { icon: faMapMarkerAlt, text: 'São Luís, Barreirinhas, Atins' },
-      { icon: faClock, text: '5 dias de aventura' },
+      { icon: faMapMarkerAlt, text: 'São Luís' },
+      { icon: faMapMarkerAlt, text: 'Barreirinhas' },
+      { icon: faMapMarkerAlt, text: 'Atins' },
+      { icon: faClock, text: '7 dias de aventura' },
       { icon: faSun, text: 'Clima tropical o ano todo' },
       { icon: faUmbrellaBeach, text: 'Praias paradisíacas' },
       { icon: faMountain, text: 'Dunas dos Lençóis Maranhenses' },
@@ -287,7 +293,7 @@ const packageData = {
     days: [
       {
         day: '1º Dia - SÃO LUÍS',
-        description: 'Chegada ao Aeroporto de São Luís, recepção e traslado ao hotel. Tarde livre para sentir um pouco a cidade e descansar.'
+        description: 'Chegada ao Aeroporto de São Luís, recepção e traslado ao hotel. Tarde livre para sentir um pouco a cidade e descansar. (adicionar city tour)'
       },
       {
         day: '2° Dia - SÃO LUÍS /BARREIRINHAS',
@@ -318,10 +324,12 @@ const packageData = {
     ]
   },
   'sao-luis-barreirinhas-lencois-maranhenses': {
-    title: 'SÃO LUÍS - BARREIRINHAS - LENCÖIS MARANHENSES',
+    title: 'SÃO LUÍS - BARREIRINHAS - LENCÓIS MARANHENSES',
     highlights: [
-      { icon: faMapMarkerAlt, text: 'São Luís, Barreirinhas, Atins' },
-      { icon: faClock, text: '5 dias de aventura' },
+      { icon: faMapMarkerAlt, text: 'São Luís' },
+      { icon: faMapMarkerAlt, text: 'Barreirinhas' },
+      { icon: faMapMarkerAlt, text: 'Lençóis Maranhenses' },
+      { icon: faClock, text: '6 dias de aventura' },
       { icon: faSun, text: 'Clima tropical o ano todo' },
       { icon: faUmbrellaBeach, text: 'Praias paradisíacas' },
       { icon: faMountain, text: 'Dunas dos Lençóis Maranhenses' },

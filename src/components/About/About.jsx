@@ -126,7 +126,7 @@ const About = () => {
               <div className="label">Anos de Experiência</div>
             </div>
             <div className="stat-item">
-              <div className="number">5K+</div>
+              <div className="number">10K+</div>
               <div className="label">Clientes Satisfeitos</div>
             </div>
             <div className="stat-item">

@@ -127,7 +127,7 @@ const regionsData = {
   },
   'atins': {
     title: "Atins",
-    description: `Atins é um paraíso escondido entre as dunas dos Lençóis Maranhenses e o mar. 
+    description: `Atins é um paraíso escondido entre as dunas dos Lençóis Maranhenses e o mar, onde o rio preguiças deságua. 
     Esta vila de pescadores preserva sua autenticidade com ruas de areia, casas simples e uma atmosfera tranquila. 
     É um destino perfeito para quem busca contato direto com a natureza e experiências únicas.`,
     highlights: [
@@ -191,7 +191,7 @@ const regionsData = {
     title: "Pequenos Lençóis",
     description: `Os Pequenos Lençóis Maranhenses são uma extensão igualmente deslumbrante do parque principal, 
     oferecendo uma experiência mais intimista e exclusiva. A região apresenta dunas menores, mas igualmente 
-    impressionantes, além de lagoas cristalinas e uma vegetação exuberante.`,
+    impressionantes, além de lagoas cristalinas e uma vegetação exuberante de vázeas e manguesais.`,
     highlights: [
       "Dunas e lagoas menos movimentadas",
       "Experiência mais exclusiva",
@@ -248,13 +248,13 @@ const regionsData = {
   'cardosa': {
     title: "Povoado Cardosa",
     description: `O Povoado Cardosa é uma comunidade tradicional que preserva a autenticidade da cultura maranhense. 
-    Localizado às margens do Rio Preguiças, o povoado oferece uma experiência única de contato com o modo de vida local, 
+    Localizado às margens do Formiga, o povoado oferece uma experiência única de contato com o modo de vida local, 
     além de ser um ponto estratégico para explorar as belezas naturais da região.`,
     highlights: [
       "Cultura local preservada",
       "Artesanato tradicional",
       "Gastronomia típica",
-      "Passeios de barco",
+      "Passeios de boia",
       "Contato com a comunidade local"
     ],
     images: [

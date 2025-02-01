@@ -40,7 +40,7 @@ const seasons = [
     waterLevel: 30,
     status: [
       'Lagoas em processo de secagem',
-      'Temperaturas mais altas',
+      'Tempo mais limpo e sem nuvens',
       'Menos turistas',
       'Preços mais acessíveis'
     ],

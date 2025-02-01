@@ -16,7 +16,7 @@ const packages = [
   },
   {
     id: 'sao-luis-santo-amaro-barreirinhas',
-    name: 'Pacote Aventura',
+    name: 'São Luís + Santo Amaro + Barreirinhas',
     description: 'Pacote de 7 dias com aventuras em Santo Amaro, Barreirinhas e São Luís.',
     image: '/lagoa-azul/lagoa-azul.jpeg',
     rating: 5.0,

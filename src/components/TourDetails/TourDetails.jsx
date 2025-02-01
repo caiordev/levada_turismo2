@@ -442,7 +442,7 @@ const tourData = {
       duration: '4 horas',
       difficulty: 'Moderada',
       included: ['Transfer 4x4', 'Guia local'],
-      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera', 'Água', 'Repelente']
     },
     gallery: [
       '/Lencois-1.jpg',
@@ -452,31 +452,23 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
+        time: '09:00',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
-      },
-      {
-        time: '09:30',
+        time: '10:00',
         activity: 'Chegada na Lagoa Azul'
       },
       {
-        time: '11:30',
+        time: '12:00',
         activity: 'Tempo livre para banho e fotos'
       },
       {
-        time: '12:30',
+        time: '12:00',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '13:00',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -499,31 +491,23 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
+        time: '09:00 ou 14:00',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
+        time: '10:30 ou 15:30',
         activity: 'Início da caminhada pelas dunas'
       },
       {
-        time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
-      },
-      {
-        time: '11:30',
+        time: '12:00 ou 17:00',
         activity: 'Tempo livre para banho e fotos'
       },
       {
-        time: '12:30',
+        time: '12:00 ou 18:00',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '13:30 ou 19:30',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -548,32 +532,33 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
+        time: '09:00',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
+        time: '10:00',
         activity: 'Início da caminhada pelas dunas'
       },
       {
-        time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
+        time: '12:00',
+        activity: 'Tempo livre para banho e fotozs'
       },
       {
-        time: '11:30',
-        activity: 'Tempo livre para banho e fotos'
+        time: '12:00',
+        activity: 'Saída para o almoço'
       },
       {
-        time: '12:30',
-        activity: 'Início do retorno'
+        time: '14:30',
+        activity: 'Retorno às lagoas'
+      }
+      ,
+      {
+        time: '18:00',
+        activity: 'Início de retorno'
       },
       {
-        time: '13:30',
-        activity: 'Chegada ao hotel'
+        time: '19:30',
+        activity: 'Retorno ao hotel'
       }
     ]
   },
@@ -596,31 +581,27 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
+        time: '08:30',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+        time: '10:00',
+        activity: 'Início da chegada ao atrativos'
       },
       {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
+        time: '12:00',
+        activity: 'Parada para o almoço'
       },
       {
-        time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
-      },
-      {
-        time: '11:30',
+        time: '15:30',
         activity: 'Tempo livre para banho e fotos'
       },
       {
-        time: '12:30',
+        time: '15:30',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '17:30',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -644,31 +625,27 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
-        activity: 'Saída do hotel em veículo 4x4'
-      },
-      {
         time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
+        activity: 'Saída de barco voadeira'
       },
       {
         time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
+        activity: 'Parada em vassouras'
       },
       {
-        time: '11:30',
-        activity: 'Tempo livre para banho e fotos'
+        time: '11:00',
+        activity: 'Chegada ao Mandacaru'
       },
       {
-        time: '12:30',
+        time: '12:00',
+        activity: 'Chegada ao Caburé'
+      },
+      {
+        time: '14:30',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '15:30',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -690,31 +667,23 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
-        activity: 'Saída do hotel em veículo 4x4'
-      },
-      {
         time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
+        activity: 'Recepção e instruções sobre o quadriciclo'
       },
       {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
+        time: '10:30',
+        activity: 'Chegada ao Alazão'
       },
       {
-        time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
+        time: '12:00',
+        activity: 'Chegada ao caburé'
       },
       {
-        time: '11:30',
-        activity: 'Tempo livre para banho e fotos'
-      },
-      {
-        time: '12:30',
+        time: '14:30',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '17:00',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -738,31 +707,19 @@ const tourData = {
     ],
     itinerary: [
       {
-        time: '07:30',
+        time: '08:30',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
-      },
-      {
-        time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
+        time: '10:00',
+        activity: 'Chegada à Cardosa'
       },
       {
         time: '11:30',
-        activity: 'Tempo livre para banho e fotos'
-      },
-      {
-        time: '12:30',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '13:00',
         activity: 'Chegada ao hotel'
       }
     ]
@@ -776,7 +733,7 @@ const tourData = {
       duration: '4 horas',
       difficulty: 'Moderada',
       included: ['Transfer 4x4', 'Guia local'],
-      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
+      recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera', 'Água']
     },
     gallery: [
       '/caiaque/caiaque1.jpeg',
@@ -787,31 +744,31 @@ const tourData = {
     videoUrl: 'https://youtube.com/shorts/XKfCEsUyISQ?feature=share',
     itinerary: [
       {
-        time: '07:30',
+        time: '08:30',
         activity: 'Saída do hotel em veículo 4x4'
       },
       {
-        time: '08:30',
-        activity: 'Chegada ao ponto de partida para Lagoa Azul'
-      },
-      {
-        time: '09:00',
-        activity: 'Início da caminhada pelas dunas'
+        time: '09:30',
+        activity: 'Chegada ao ponto de partida no Sobradinho'
       },
       {
         time: '09:30',
-        activity: 'Chegada na Lagoa Azul'
+        activity: 'Início da descida de caiaque'
       },
       {
-        time: '11:30',
-        activity: 'Tempo livre para banho e fotos'
+        time: '11:00',
+        activity: 'Parada para o lanche e descanço'
+      },
+      {
+        time: '12:00',
+        activity: 'Chegada ao Balneário do Recanto'
       },
       {
         time: '12:30',
         activity: 'Início do retorno'
       },
       {
-        time: '13:30',
+        time: '13:00',
         activity: 'Chegada ao hotel'
       }
     ]
