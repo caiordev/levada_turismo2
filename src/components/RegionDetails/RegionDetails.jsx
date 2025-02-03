@@ -201,16 +201,16 @@ const regionsData = {
     ],
     images: [
       {
-        url: "/pequenos-lencois/pequenos1.jpeg",
-        caption: "Vista aérea dos Pequenos Lençóis"
+        url: "/pequenos-lencois/foto3.jpeg",
+        caption: "Vista do passeio próximo ao mar"
       },
       {
         url: "/pequenos-lencois/pequenos2.jpeg",
         caption: "Lagoas cristalinas"
       },
       {
-        url: "/pequenos-lencois/pequenos3.jpeg",
-        caption: "Dunas e vegetação"
+        url: "/pequenos-lencois/foto5.jpeg",
+        caption: "Dunas"
       }
     ],
     bestTime: {

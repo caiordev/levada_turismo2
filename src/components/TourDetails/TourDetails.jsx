@@ -662,8 +662,9 @@ const tourData = {
       recommendations: ['Protetor solar', 'Roupas de banho', 'Toalha', 'Câmera']
     },
     gallery: [
-      '/pequenos-lencois/foto1.jpeg',
-      '/pequenos-lencois/foto2.jpeg'
+      '/pequenos-lencois/foto3.jpeg',
+      '/pequenos-lencois/foto4.jpeg',
+      '/pequenos-lencois/foto5.jpeg',
     ],
     itinerary: [
       {
