@@ -7,6 +7,7 @@ import OurTours from './components/OurTours/OurTours'
 import Transfer from './components/Transfer/Transfer'
 import Contact from './components/Contact/Contact'
 import FAQ from './components/FAQ/FAQ'
+import Cadastur from './components/Cadastur/Cadastur'
 import Footer from './components/Footer/Footer'
 import WhatsAppFloat from './components/WhatsApp/WhatsAppFloat'
 import TourDetails from './components/TourDetails/TourDetails'
@@ -65,6 +66,7 @@ const AppContent = () => {
             <Transfer />
             <SeasonalInfo />
             <Contact />
+            <Cadastur />
             <Reviews />
             <FAQ />
           </>

@@ -58,16 +58,38 @@ const regionsData = {
       {
         id: 'lagoa-azul',
         name: 'Lagoa Azul',
-        description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
+        description: 'Passeio de um dia inteiro de quadriciclo, com paradas para banho e fotos.',
         image: '/lencois-maranhenses.jpg',
-        duration: '8 horas',
         includes: [
           'Transfer hotel-parque-hotel',
           'Guia especializado',
           'Água mineral',
           'Seguro viagem'
         ],
-        price: 'A partir de R$ 150'
+      },
+      {
+        id: 'lagoa-azul',
+        name: 'Lagoa Azul',
+        description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
+        image: '/lencois-maranhenses.jpg',
+        includes: [
+          'Transfer hotel-parque-hotel',
+          'Guia especializado',
+          'Água mineral',
+          'Seguro viagem'
+        ]
+      },
+      {
+        id: 'lagoa-bonita',
+        name: 'Lagoa Bonita',
+        description: 'Passeio de um dia inteiro pela famosa Lagoa Bonita, com paradas para banho e fotos.',
+        image: '/lencois-maranhenses.jpg',
+        includes: [
+          'Transfer hotel-parque-hotel',
+          'Guia especializado',
+          'Água mineral',
+          'Seguro viagem'
+        ]
       }
     ]
   },
@@ -114,6 +136,19 @@ const regionsData = {
         id: 'farol-tour',
         name: 'Tour do Farol',
         description: 'Visita guiada ao Farol de Mandacaru com explicações históricas.',
+        image: '/mandacaru.webp',
+        duration: '3 horas',
+        includes: [
+          'Guia local',
+          'Entrada no farol',
+          'Água mineral'
+        ],
+        price: 'A partir de R$ 80'
+      },
+      {
+        id: 'barco-tour',
+        name: 'Passeio de Barco pelo Rio Preguiças',
+        description: 'Passeio de barco pelo Rio Preguiças com paradas em Vassouras, Caburé, Mandacaru e Pequenos Lençóis para banho e fotos.',
         image: '/mandacaru.webp',
         duration: '3 horas',
         includes: [
