@@ -58,37 +58,31 @@ const regionsData = {
       {
         id: 'lagoa-azul',
         name: 'Lagoa Azul',
-        description: 'Passeio de um dia inteiro de quadriciclo, com paradas para banho e fotos.',
+        description: 'Passeio para a famosa Lagoa Azul, com paradas para banho e fotos.',
         image: '/lencois-maranhenses.jpg',
         includes: [
           'Transfer hotel-parque-hotel',
-          'Guia especializado',
-          'Água mineral',
-          'Seguro viagem'
+          'Guia especializado'
         ],
       },
       {
-        id: 'lagoa-azul',
-        name: 'Lagoa Azul',
-        description: 'Passeio de um dia inteiro pela famosa Lagoa Azul, com paradas para banho e fotos.',
-        image: '/lencois-maranhenses.jpg',
+        id: 'quadriciclo',
+        name: 'Trilha para os Lençóis',
+        description: 'Passeio de um dia para uma trilha cheia de emoção em veículo 4x4, com paradas para banho e fotos.',
+        image: '/pequenos-lencois/foto5.jpeg',
         includes: [
           'Transfer hotel-parque-hotel',
-          'Guia especializado',
-          'Água mineral',
-          'Seguro viagem'
+          'Guia especializado'
         ]
       },
       {
         id: 'lagoa-bonita',
         name: 'Lagoa Bonita',
         description: 'Passeio de um dia inteiro pela famosa Lagoa Bonita, com paradas para banho e fotos.',
-        image: '/lencois-maranhenses.jpg',
+        image: '/lagoa-bonita/lagoabonita2.png',
         includes: [
           'Transfer hotel-parque-hotel',
-          'Guia especializado',
-          'Água mineral',
-          'Seguro viagem'
+          'Guia especializado'
         ]
       }
     ]
@@ -108,11 +102,11 @@ const regionsData = {
     ],
     images: [
       {
-        url: "/mandacaru1.jpg",
+        url: "/mandacaru/mandacaru1.jpeg",
         caption: "Farol de Mandacaru"
       },
       {
-        url: "/mandacaru2.jpg",
+        url: "/mandacaru/mandacaru3.png",
         caption: "Vista do Rio Preguiças"
       }
     ],
@@ -137,26 +131,20 @@ const regionsData = {
         name: 'Tour do Farol',
         description: 'Visita guiada ao Farol de Mandacaru com explicações históricas.',
         image: '/mandacaru.webp',
-        duration: '3 horas',
         includes: [
           'Guia local',
-          'Entrada no farol',
-          'Água mineral'
+          'Entrada no farol'
         ],
-        price: 'A partir de R$ 80'
       },
       {
         id: 'barco-tour',
         name: 'Passeio de Barco pelo Rio Preguiças',
         description: 'Passeio de barco pelo Rio Preguiças com paradas em Vassouras, Caburé, Mandacaru e Pequenos Lençóis para banho e fotos.',
-        image: '/mandacaru.webp',
-        duration: '3 horas',
+        image: '/mandacaru/mandacaru2.png',
         includes: [
           'Guia local',
-          'Entrada no farol',
-          'Água mineral'
+          'Entrada no farol'
         ],
-        price: 'A partir de R$ 80'
       }
     ]
   },
@@ -211,14 +199,12 @@ const regionsData = {
         name: 'Atins Aventura',
         description: 'Explore as dunas, praias e lagoas da região de Atins.',
         image: '/atins.webp',
-        duration: '6 horas',
         includes: [
           'Transporte 4x4',
           'Guia especializado',
           'Água mineral',
           'Paradas para banho'
         ],
-        price: 'A partir de R$ 180'
       }
     ]
   },
@@ -269,14 +255,23 @@ const regionsData = {
         name: 'Tour Pequenos Lençóis',
         description: 'Conheça as belezas dos Pequenos Lençóis em um passeio exclusivo.',
         image: '/pequenos-lencois.jpg',
-        duration: '5 horas',
         includes: [
           'Transporte 4x4',
           'Guia local',
           'Água mineral',
           'Paradas para fotos e banho'
         ],
-        price: 'A partir de R$ 160'
+      },
+      {
+        id: 'pequenos-lencois-tour',
+        name: 'Tour Pequenos Lençóis de Barco',
+        description: 'Conheça as belezas dos Pequenos Lençóis em um passeio exclusivo.',
+        image: '/pequenos-lencois.jpg',
+        includes: [
+          'Lancha Voadeira',
+          'Guia local',
+          'Paradas para fotos e banho'
+        ],
       }
     ]
   },
@@ -327,14 +322,12 @@ const regionsData = {
         name: 'Experiência Cultural Cardosa',
         description: 'Imersão na cultura local com visita às famílias tradicionais.',
         image: '/cardosa.webp',
-        duration: '4 horas',
         includes: [
           'Guia local',
           'Degustação de comidas típicas',
           'Demonstração de artesanato',
           'Passeio pela comunidade'
         ],
-        price: 'A partir de R$ 120'
       }
     ]
   }
@@ -421,12 +414,6 @@ const RegionDetails = () => {
                     ))}
                   </ul>
                   <div className="tour-buttons">
-                    <button 
-                      className="btn-ver-mais"
-                      onClick={() => handleTourClick(tour.id)}
-                    >
-                      Ver Mais
-                    </button>
                     <button 
                       className="btn-reservar"
                       onClick={() => handleReservar(tour.name)}

@@ -14,7 +14,7 @@ const tours = [
     id: 'lagoa-bonita',
     name: 'Lagoa Bonita',
     description: 'Passeio para apreciar o pôr do sol na Lagoa Bonita, com vista panorâmica dos lençóis maranhenses.',
-    image: '/circuito-lagoa-bonita.webp',
+    image: '/lagoa-bonita/lagoabonita2.png',
     rating: 5.0
   },
   {
