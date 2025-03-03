@@ -1,4 +1,3 @@
-import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -107,7 +106,7 @@ const TransferCard = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 380px;
   position: relative;
 
   img {
@@ -115,6 +114,17 @@ const ImageContainer = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    img {
+    width: 305px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+  }
   }
 `;
 
@@ -227,8 +237,12 @@ const transferInfo = {
   title: "Transfer",
   description: "Oferecemos serviço de transfer privativo com conforto e segurança. Nossa equipe experiente garante uma viagem tranquila do aeroporto até seu destino.",
   images: [
-    "/carro/carro.jpeg",
+    "/carro/carro4.jpeg",
     "/carro/carro1.jpeg",
+    "/carro/carro2.jpeg",
+    "/carro/carro3.jpeg",
+    "/carro/carro.jpeg"
+    
   ],
   features: [
     "Veículos modernos e climatizados",
