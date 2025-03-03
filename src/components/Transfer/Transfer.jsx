@@ -117,14 +117,22 @@ const ImageContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
     img {
-    width: 305px;
-    height: 250px;
-    object-fit: cover;
-    object-position: center;
+      width: 360px;
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
   }
+
+  @media (max-width: 1024px) {
+    height: 250px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+  
   }
 `;
 
